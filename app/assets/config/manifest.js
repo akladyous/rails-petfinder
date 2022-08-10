@@ -4,4 +4,5 @@
 //= require_tree .
 
 //= link index.css
+//= link home_page.css
 
