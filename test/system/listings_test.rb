@@ -16,10 +16,8 @@ class ListingsTest < ApplicationSystemTestCase
 
     fill_in "Address", with: @listing.address
     fill_in "Description", with: @listing.description
-    fill_in "Lost found date", with: @listing.lost_found_date
-    check "Published" if @listing.published
-    fill_in "Published at", with: @listing.published_at
-    fill_in "Type", with: @listing.type
+    fill_in "Last seen", with: @listing.last_seen
+    fill_in "Listing type", with: @listing.listing_type
     fill_in "User", with: @listing.user_id
     click_on "Create Listing"
 
@@ -33,10 +31,8 @@ class ListingsTest < ApplicationSystemTestCase
 
     fill_in "Address", with: @listing.address
     fill_in "Description", with: @listing.description
-    fill_in "Lost found date", with: @listing.lost_found_date
-    check "Published" if @listing.published
-    fill_in "Published at", with: @listing.published_at
-    fill_in "Type", with: @listing.type
+    fill_in "Last seen", with: @listing.last_seen
+    fill_in "Listing type", with: @listing.listing_type
     fill_in "User", with: @listing.user_id
     click_on "Update Listing"
 

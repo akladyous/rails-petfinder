@@ -12,23 +12,13 @@
   <% end %>
 
   <div>
-    <%= form.label :type, style: "display: block" %>
-    <%= form.number_field :type %>
+    <%= form.label :listing_type, style: "display: block" %>
+    <%= form.number_field :listing_type %>
   </div>
 
   <div>
-    <%= form.label :published, style: "display: block" %>
-    <%= form.check_box :published %>
-  </div>
-
-  <div>
-    <%= form.label :published_at, style: "display: block" %>
-    <%= form.datetime_field :published_at %>
-  </div>
-
-  <div>
-    <%= form.label :lost_found_date, style: "display: block" %>
-    <%= form.datetime_field :lost_found_date %>
+    <%= form.label :last_seen, style: "display: block" %>
+    <%= form.datetime_field :last_seen %>
   </div>
 
   <div>

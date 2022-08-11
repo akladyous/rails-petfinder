@@ -5,4 +5,5 @@
 
 //= link index.css
 //= link home_page.css
+//= link style.css
 
