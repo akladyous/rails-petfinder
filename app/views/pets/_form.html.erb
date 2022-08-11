@@ -1,0 +1,87 @@
+<%= form_with(model: pet) do |form| %>
+  <% if pet.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(pet.errors.count, "error") %> prohibited this pet from being saved:</h2>
+
+      <ul>
+        <% pet.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :species, style: "display: block" %>
+    <%= form.number_field :species %>
+  </div>
+
+  <div>
+    <%= form.label :breed, style: "display: block" %>
+    <%= form.text_field :breed %>
+  </div>
+
+  <div>
+    <%= form.label :gender, style: "display: block" %>
+    <%= form.number_field :gender %>
+  </div>
+
+  <div>
+    <%= form.label :age, style: "display: block" %>
+    <%= form.text_field :age %>
+  </div>
+
+  <div>
+    <%= form.label :size, style: "display: block" %>
+    <%= form.number_field :size %>
+  </div>
+
+  <div>
+    <%= form.label :color, style: "display: block" %>
+    <%= form.text_field :color %>
+  </div>
+
+  <div>
+    <%= form.label :height, style: "display: block" %>
+    <%= form.text_field :height %>
+  </div>
+
+  <div>
+    <%= form.label :weight, style: "display: block" %>
+    <%= form.text_field :weight %>
+  </div>
+
+  <div>
+    <%= form.label :coat, style: "display: block" %>
+    <%= form.text_field :coat %>
+  </div>
+
+  <div>
+    <%= form.label :microchip, style: "display: block" %>
+    <%= form.number_field :microchip %>
+  </div>
+
+  <div>
+    <%= form.label :collar, style: "display: block" %>
+    <%= form.check_box :collar %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
