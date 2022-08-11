@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 1
+  published: false
+  published_at: 2022-08-11 15:28:38
+  lost_found_date: 2022-08-11 15:28:38
+  address: MyString
+  description: MyText
+  user: one
+
+two:
+  type: 1
+  published: false
+  published_at: 2022-08-11 15:28:38
+  lost_found_date: 2022-08-11 15:28:38
+  address: MyString
+  description: MyText
+  user: two
