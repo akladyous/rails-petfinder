@@ -13,7 +13,6 @@ class ListingsController < ApplicationController
   # GET /listings/new
   def new
     @listing = Listing.new
-    @listing.user = current_user
     @listing.build_pet
   end
 
@@ -23,13 +22,16 @@ class ListingsController < ApplicationController
 
   # POST /listings or /listings.json
   def create
+    # debugger
     @listing = Listing.new(listing_params)
+    @listing.user = current_user
 
     respond_to do |format|
       if @listing.save
         format.html { redirect_to listing_url(@listing), notice: "Listing was successfully created." }
         format.json { render :show, status: :created, location: @listing }
       else
+        flash[:error] = @listing.errors.count.to_s + " error".pluralize(@listing.errors.count) + ' prohibited this listing from being saved'
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @listing.errors, status: :unprocessable_entity }
       end
@@ -67,6 +69,12 @@ class ListingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def listing_params
-      params.require(:listing).permit(:listing_type, :last_seen, :address, :description, :user_id, Pet.attribute_names.map(&:to_sym).push(:destroy))
+      params.require(:listing).permit(:listing_type, :last_seen, :address, :description, :user_id, pet_attributes: [:id, :name, :species])
+      # , pet_attributes: [:id, :name, :species]
+      # require(:listing).permit(:listing_type, :last_seen, :address, :description, :user_id, pet_attributes: Pet.attribute_names.map(&:to_sym).push(:destroy))
     end
 end
+# listing_params
+# p1 = params.require(:listing).permit(:listing_type, :last_seen, :address, :description, :user_id, :pet_attributes => [:name, :species])
+# p1.require(:pet_attributes).permit(:name, :species)
+# p2 = params.require(:pet).permit(:name, :species)

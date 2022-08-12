@@ -55,16 +55,16 @@ gem 'devise', '~> 4.8', '>= 4.8.1'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: %i[ mri mingw x64_mingw ]
-  gem 'solargraph', '~> 0.45.0'
-  gem 'solargraph-rails', '~> 0.3.1'
 end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
-  gem "web-console"
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
+  gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem 'solargraph', '~> 0.45.0'
+  gem 'solargraph-rails', '~> 0.3.1'
+  gem "web-console"
   # gem "rack-mini-profiler"
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]

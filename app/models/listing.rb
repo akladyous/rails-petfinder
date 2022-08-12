@@ -5,6 +5,7 @@ class Listing < ApplicationRecord
   # proc { |attr| attr['name'].blank? }
 
   validates :listing_type, :last_seen, :address, :description, presence: true
+  # validates_associated :pet
 
   enum :listing_type, { lost: 0, found: 1}, default: :lost
 end

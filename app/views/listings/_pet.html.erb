@@ -1,12 +1,17 @@
+
 <div class="form-group mb-2">
-    <%= f.label :name, { class: 'form-label'} %>
-    <%= f.text_field :name, { class: 'form-control'} %>
+    <%= pet_builder.label :name, { class: 'form-label'} %>
+    <%= pet_builder.text_field :name, { class: 'form-control'} %>
+    <%= feedback_for? @listing, :"pet.name" %>
 </div>
 <div class="form-group mb-2">
-    <%= f.label :species, { class: 'form-label'} %>
-    <%= f.select :species,
-        options_for_select(listing_type_options),
+    <%= pet_builder.label :species, { class: 'form-label'} %>
+    <%= pet_builder.select :species,
+        options_for_select(pet_species_options),
         {},
         { class: 'form-select'}
     %>
+    <%# parente %>
+    <%# feedback_for? @listing, :"pet.species" %>
 </div>
+
