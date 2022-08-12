@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
           :recoverable, :rememberable, :validatable
 
-
+  has_one :avatar
   has_many :pets
   has_many :listings
 end

@@ -7,3 +7,4 @@
 //= link home_page.css
 //= link style.css
 
+//= require activestorage

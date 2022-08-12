@@ -17,7 +17,7 @@
     </div>
 
     <div class="form-group mb-2">
-        <%= form.label :address, { class: 'form-label'} %>
+        <%= form.label :last_seen_address, { class: 'form-label'} %>
         <%= form.text_field :address, { class: 'form-control' } %>
         <%= feedback_for? @listing, :address %>
     </div>
@@ -43,4 +43,4 @@
     <% end %>
 
 </div>
-<%# console %>
+<%= console %>

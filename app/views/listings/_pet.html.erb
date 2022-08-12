@@ -1,3 +1,10 @@
+<div class="form-group mb-3 pet-image">
+    <% if @listing.pet.pet_image.attached? %>
+        <%= image_tag @listing.pet.pet_image %>
+    <% else %>
+        <%= pet_builder.file_field :pet_image, { class: 'image-fluid'} %>
+    <% end %>
+</div>
 
 <div class="form-group mb-2">
     <%= pet_builder.label :name, { class: 'form-label'} %>

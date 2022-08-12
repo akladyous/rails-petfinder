@@ -69,7 +69,7 @@ class ListingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def listing_params
-      params.require(:listing).permit(:listing_type, :last_seen, :address, :description, :user_id, pet_attributes: [:id, :name, :species])
+      params.require(:listing).permit(:listing_type, :last_seen, :address, :description, :user_id, pet_attributes: [:name, :species, :pet_image])
       # , pet_attributes: [:id, :name, :species]
       # require(:listing).permit(:listing_type, :last_seen, :address, :description, :user_id, pet_attributes: Pet.attribute_names.map(&:to_sym).push(:destroy))
     end
