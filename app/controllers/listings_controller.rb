@@ -13,6 +13,8 @@ class ListingsController < ApplicationController
   # GET /listings/new
   def new
     @listing = Listing.new
+    @listing.user = current_user
+    @listing.build_pet
   end
 
   # GET /listings/1/edit
@@ -65,6 +67,6 @@ class ListingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def listing_params
-      params.require(:listing).permit(:listing_type, :last_seen, :address, :description, :user_id)
+      params.require(:listing).permit(:listing_type, :last_seen, :address, :description, :user_id, Pet.attribute_names.map(&:to_sym).push(:destroy))
     end
 end
