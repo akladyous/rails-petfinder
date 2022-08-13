@@ -1,8 +1,10 @@
 <div class="form-group mb-3 pet-image">
     <% if @listing.pet.pet_image.attached? %>
+        <%# image_tag @listing.pet.pet_image.representation(resize_to_limit: [100, 100]) %>
         <%= image_tag @listing.pet.pet_image %>
     <% else %>
-        <%= pet_builder.file_field :pet_image, { class: 'image-fluid'} %>
+        <%# pet_builder.file_field :pet_image, direct_upload: true,  { class: 'image-fluid'} %>
+        <%= pet_builder.file_field :pet_image, {multiple: false, direct_upload: true, class: 'image-fluid' } %>
     <% end %>
 </div>
 
