@@ -8,14 +8,6 @@ Rails.application.routes.draw do
     end
   end
 
-  # namespace :wizards do
-  #   namespace :companies do
-  #     resources :profiles, only: [:new, :create]
-  #     resources :locations, only: [:new, :create]
-  #     resources :finished, only: :show
-  #   end
-  # end
-
   devise_for :users
   root "home#index"
 end
