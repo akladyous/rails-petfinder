@@ -5,13 +5,11 @@ module Wizards
     class ReportsController < ApplicationController
 
       def new
-        # session[:listing_report] = nil
         @listing_report = ListingReport.new
       end
 
       def create
         @listing_report = ListingReport.new(listing_report_params)
-        # binding.irb
         if @listing_report.valid?
           # listing_report_params.to_h
           set_session_data
