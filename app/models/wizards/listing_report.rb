@@ -1,5 +1,7 @@
+
+
 module Wizards
-  class ReportLostFound
+  class ListingReport
     include ActiveModel::Model
 
     attr_accessor :listing_type, :last_seen, :address, :crossroads, :description
