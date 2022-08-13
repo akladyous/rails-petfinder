@@ -11,10 +11,3 @@ Rails.application.routes.draw do
   devise_for :users
   root "home#index"
 end
-=begin
-wizards_companies_profiles POST /wizards/companies/profiles(.:format)      wizards/companies/profiles#create
-new_wizards_companies_profile GET  /wizards/companies/profiles/new(.:format)  wizards/companies/profiles#new
-wizards_companies_locations POST /wizards/companies/locations(.:format)     wizards/companies/locations#create
-new_wizards_companies_location GET  /wizards/companies/locations/new(.:format) wizards/companies/locations#new
-wizards_companies_finished GET  /wizards/companies/finished/:id(.:format)  wizards/companies/finished#show
-=end
