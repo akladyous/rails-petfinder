@@ -1,6 +1,6 @@
 <div class="container mt-4">
     <div class="row justify-content-md-center">
-        <div class="col col-lg-5 col-md-5 col-sm-5">
+        <div class="col col-lg-6 col-md-6 col-sm-6">
             <div class="card">
                 <div class="card-header text-center">
                     SignIn Page
@@ -9,22 +9,58 @@
                     <div class="user-avatar">
                         <%= image_tag("avatar.jpeg", size: '100x100', alt:'avatar', class: 'rounded mx-auto d-block') %>
                     </div>
-                    <%= form_with model: @listing_report, url: new_wizards_listings_report_path do |form| %>
+                    <%= form_with model: @listing_report,
+                        url: wizards_listings_reports_path,
+                        method: :post,
+                        data: { turbo: false } do |form|
+                    %>
 
-                        <!-- <div class="form-group mb-2">
-
-                        </div> -->
-                        <%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
-                            <% form.select_field :type, options_for_select
+                        <%= content_tag :div, nil, { class: 'form-group'} do %>
+                            <%= form.label  :listing_type %>
+                            <%= form.select :listing_type,
+                                options_for_select(listing_type_options, selected: 'lost'), {},
+                                { :class => 'form-select', auto_focus: true }
+                            %>
                         <% end %>
 
-                    <% end %>
+                        <%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
+                            <%= form.label :date_last_seen, { class: 'form-label'} %>
+                            <%= form.date_field :lost_found_date, {value: Time.now.strftime("%Y-%m-%d"), class: 'form-control'} %>
+                            <%= feedback_for? @listing_report, :lost_found_date %>
+                        <% end %>
 
+                        <%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
+                            <%= form.label :Nearest_Address_Last_Seen, { class: 'form-label'} %>
+                            <%= form.text_field :address, { class: 'form-control'} %>
+                            <%= feedback_for? @listing_report, :address %>
+                        <% end %>
+
+                        <%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
+                            <%= form.label 'Nearest cross streets, landmark or location', { class: 'form-label'} %>
+                            <%= form.text_field :crossroads, { class: 'form-control'} %>
+                            <%= feedback_for? @listing_report, :crossroads %>
+                        <% end %>
+
+                        <%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
+                            <%= form.label :pet_description, { class: 'form-label'} %>
+                            <%= form.text_area :pet_description, { class: 'form-control'} %>
+                            <%= feedback_for? @listing_report, :pet_description %>
+                        <% end %>
+
+                        <%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
+                            <%= form.label :comment, { class: 'form-label'} %>
+                            <%= form.text_area :comment, { class: 'form-control'} %>
+                            <%= feedback_for? @listing_report, :comment %>
+                        <% end %>
+
+                        <%= content_tag :div, nil, { class: "form-control text-center border-0 mt-3" } do %>
+                            <%= form.submit "Continue", { class: "btn btn-light rounded-pill py-2 px-4" } %>
+                        <% end %>
+                    <% end %>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-
-
+<%= console %>
