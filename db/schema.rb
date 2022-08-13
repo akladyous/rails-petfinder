@@ -57,17 +57,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_13_170742) do
 
   create_table "pets", force: :cascade do |t|
     t.string "name"
-    t.integer "species"
+    t.integer "species", default: 0
+    t.integer "gender", default: 0
+    t.integer "size", default: 0
     t.string "breed"
-    t.integer "gender"
     t.string "color"
     t.string "coat"
-    t.integer "size"
     t.decimal "age", precision: 4, scale: 2
     t.decimal "height", precision: 5, scale: 2
     t.decimal "weight", precision: 5, scale: 2
     t.integer "microchip"
-    t.boolean "collar"
+    t.boolean "collar", default: false
     t.text "description"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
