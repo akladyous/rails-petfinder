@@ -1,10 +1,10 @@
 module Wizards
-  class LostFound
+  class ReportLostFound
     include ActiveModel::Model
 
     attr_accessor :listing_type, :last_seen, :address, :crossroads, :description
 
-    validates :listing_type, :last_seen, :address, :crossroads, :description, presence: true
+    validates :type, :last_seen, :address, :crossroads, :pet_description, presence: true
   end
 
 end
