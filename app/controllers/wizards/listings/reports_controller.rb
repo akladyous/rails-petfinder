@@ -34,13 +34,13 @@ module Wizards
 
       def set_session_data
         session[:listing_report] = {
-              listing_type: @listing_report.listing_type,
-              lost_found_date: @listing_report.lost_found_date,
-              address: @listing_report.address,
-              crossroads: @listing_report.crossroads,
-              pet_description: @listing_report.pet_description,
-              comment: @listing_report.comment
-            }
+          listing_type: @listing_report.listing_type,
+          lost_found_date: @listing_report.lost_found_date,
+          address: @listing_report.address,
+          crossroads: @listing_report.crossroads,
+          pet_description: @listing_report.pet_description,
+          comment: @listing_report.comment
+        }
       end
     end
 

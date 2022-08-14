@@ -11,5 +11,8 @@ module ApplicationHelper
         nil
     end
 
+    def input_selector(model, attribute)
+      model.public_send(attribute.pluralize.to_sym).map { |k,_| [k.capitalize, k] }
+    end
 
 end

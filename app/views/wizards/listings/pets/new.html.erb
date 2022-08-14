@@ -1,0 +1,59 @@
+<div class="container mt-4">
+    <div class="row justify-content-md-center">
+        <div class="col col-lg-6 col-md-6 col-sm-6">
+            <div class="card">
+                <div class="card-header text-center">
+                    SignIn Page
+                </div>
+                <div class="card-body">
+                    <div class="user-avatar">
+                        <%= image_tag("avatar.jpeg", size: '100x100', alt:'avatar', class: 'rounded mx-auto d-block') %>
+                    </div>
+
+                    <%= form_with model: @pet_info,
+                        url: new_wizards_listings_pet_path,
+                        method: :post,
+                        class: 'needs-validation',
+                        data: { turbo: false } do |form|
+                    %>
+
+                    <%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
+                        <%= form.label :name, { class: 'form-label' } %>
+                        <%= form.text_field :name, { class: 'form-control' } %>
+                    <% end %>
+
+                    <%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
+                        <%= form.label :species, { class: 'form-label' } %>
+                        <%= form.select :species,
+                            options_for_select(pet_input_selector :species ),
+                            { include_blank: true },
+                            { class: 'form-select' } %>
+                    <% end %>
+
+                    <%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
+                        <%= form.label :gender, { class: 'form-label' } %>
+                        <%= form.select :gender,
+                            options_for_select( pet_input_selector :gender ),
+                            { include_blank: true },
+                            { class: 'form-select' } %>
+                    <% end %>
+
+                    <%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
+                        <%= form.label :size, { class: 'form-label' } %>
+                        <span>optional</span>
+                        <%= form.select :size,
+                            options_for_select(pet_input_selector :size),
+                            { include_blank: true },
+                            { class: 'form-select' } %>
+                    <% end %>
+
+
+
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%# console %>
