@@ -1,0 +1,9 @@
+<%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
+    <%= form.label 'listing_type', { class: 'form-check-label'} %>
+    <% Listing.listing_types.keys.each do |o| %>
+        <%= content_tag :div, nil, { class: 'form-check' } do %>
+            <%= form.radio_button :listing_type, o, checked: false, class: 'form-check-input' %>
+            <%= content_tag :span, o.capitalize %>
+        <% end %>
+    <% end %>
+<% end %>
