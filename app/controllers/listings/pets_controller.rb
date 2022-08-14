@@ -1,8 +1,8 @@
 # step 2
 
-module Wizards
+# module Wizards
   module Listings
-    class PetsController < ApplicationController
+    class PetsController < BaseController
 
       def new
         @pet_info = PetInfo.new
@@ -47,4 +47,4 @@ module Wizards
 
     end
   end
-end
+# end

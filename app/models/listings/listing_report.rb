@@ -1,6 +1,6 @@
 
 
-module Wizards
+module Listings
   class ListingReport
     include ActiveModel::Model
     # include ActiveModel::Validations

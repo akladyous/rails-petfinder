@@ -1,6 +1,6 @@
 module Wizards
   module Listings
-    class CompletedController < ApplicationController
+    class CompletedController < BaseController
 
       def show
 

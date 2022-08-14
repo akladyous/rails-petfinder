@@ -1,8 +1,7 @@
 # step 1
 
-module Wizards
   module Listings
-    class ReportsController < ApplicationController
+    class ReportsController < BaseController
 
       def new
         @listing_report = ListingReport.new
@@ -22,7 +21,7 @@ module Wizards
       private
 
       def listing_report_params
-        params.require(:wizards_listing_report).permit(
+        params.require(:listings_listing_report).permit(
             :listing_type,
             :lost_found_date,
             :address,
@@ -45,4 +44,3 @@ module Wizards
     end
 
   end
-end

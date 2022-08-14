@@ -1,5 +1,5 @@
 
-<%= render 'wizards/form' %>
+<%# render 'form' %>
 
 <div class="container mt-4">
     <div class="row justify-content-md-center">
@@ -13,7 +13,7 @@
                         <%= image_tag("avatar.jpeg", size: '100x100', alt:'avatar', class: 'rounded mx-auto d-block') %>
                     </div>
                     <%= form_with model: @listing_report,
-                        url: wizards_listings_reports_path,
+                        url: listings_reports_path,
                         method: :post,
                         data: { turbo: false } do |form|
                     %>

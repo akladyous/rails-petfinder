@@ -1,4 +1,4 @@
-module Wizards
+module Listings
   class PetInfo
     include ActiveModel::Model
 
