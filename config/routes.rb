@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  # resources :listings
+  resources :books
 
   # namespace :wizards do
     namespace :listings do

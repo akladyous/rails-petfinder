@@ -3,6 +3,10 @@
   module Listings
     class ReportsController < BaseController
 
+      # def index
+      #   redirect_to action: 'new'
+      # end
+
       def new
         @listing_report = ListingReport.new
       end
@@ -12,7 +16,7 @@
         if @listing_report.valid?
           # listing_report_params.to_h
           set_session_data
-          redirect_to new_wizards_listings_pet_path
+          redirect_to new_listings_pet_path
         else
           render :new
         end
