@@ -13,10 +13,9 @@
         set_session_data
         if @petinfo.valid?
           listing = ListingCreation.call(session)
-          debugger
           if listing.save
             session.delete(:listing_info)
-            session.delete(:pet_info)
+            session.delete(:petinfo)
             redirect_to listings_completed_path(listing)
           end
         else
