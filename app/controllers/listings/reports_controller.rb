@@ -14,7 +14,6 @@
           set_session_data
           redirect_to new_listings_pet_path
         else
-          flash[:error] = 'form error'
           render :new
         end
       end

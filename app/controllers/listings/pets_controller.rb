@@ -5,11 +5,12 @@
     class PetsController < BaseController
 
       def new
-        @pet_info = PetInfo.new
+        @pet_info = PetInfo.new(session[:petinfo])
       end
 
       def create
-        @pet_info = PetInfo.new(pet_info_params)
+        @pet_info = PetInfo.new(petinfo_params)
+        set_session_data
         if @pet_info.valid?
           redirect_to wizards_listings_pets_path
         else
@@ -17,11 +18,9 @@
         end
       end
 
-
-
       protected
 
-      def pet_info_params
+      def petinfo_params
         params
           .require(:pet)
           .permit(:name,:species,:gender,:size,:breed,:color,:coat,:age,:height,:weight,:microchip,:collar,:description)
