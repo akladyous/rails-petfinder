@@ -1,6 +1,6 @@
 
 
-<%= turbo_frame_tag "form_wizard" do %>
+<%= turbo_frame_tag "form_wizard", data: {turbo_action: 'advance'} do %>
     <div class="container mt-4">
         <div class="row justify-content-md-center">
             <div class="col col-lg-6 col-md-6 col-sm-6">
@@ -14,11 +14,12 @@
                         </div>
 
                         <!-- data: { turbo: false }  -->
-                        <%= form_with model: @pet_info, url: new_listings_pet_path, class: 'needs-validation' do |form| %>
+                        <%= form_with model: @petinfo, url: listings_pets_path, class: 'needs-validation' do |form| %>
 
                         <%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
                             <%= form.label :name, { class: 'form-label' } %>
                             <%= form.text_field :name, { class: 'form-control' } %>
+                            <%= feedback_for? @petinfo, :name %>
                         <% end %>
 
                         <%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
@@ -27,6 +28,7 @@
                                 options_for_select(pet_input_selector :species ),
                                 { include_blank: true },
                                 { class: 'form-select' } %>
+                                <%= feedback_for? @petinfo, :species %>
                         <% end %>
 
                         <%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
@@ -35,6 +37,7 @@
                                 options_for_select( pet_input_selector :gender ),
                                 { include_blank: true },
                                 { class: 'form-select' } %>
+                                <%= feedback_for? @petinfo, :gender %>
                         <% end %>
 
                         <%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
@@ -44,9 +47,12 @@
                                 options_for_select(pet_input_selector :size),
                                 { include_blank: true },
                                 { class: 'form-select' } %>
+                                <%= feedback_for? @petinfo, :size %>
                         <% end %>
 
-
+                        <%= content_tag :div, nil, { class: "form-control text-center border-0 mt-3" } do %>
+                            <% form.submit "submit", class: "btn btn-light rounded-pill py-2 px-4" %>
+                        <% end %>
 
                         <% end %>
                         <%= link_to "back", new_listings_report_path %>
@@ -58,4 +64,4 @@
 
 <% end %>
 
-<%# console %>
+<%= console %>

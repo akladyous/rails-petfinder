@@ -14,7 +14,6 @@ class CreatePets < ActiveRecord::Migration[7.0]
       t.integer :microchip
       t.boolean :collar, default: false
       t.text :description
-      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end

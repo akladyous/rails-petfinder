@@ -1,0 +1,9 @@
+
+<%= turbo_frame_tag "form_wizard", data: {turbo_action: 'advance'} do %>
+    <div class="container">
+        <p><%= @listing.listing_type %> </p>
+        <p><%= @listing.lost_found_date %></p>
+        <p><%= @listing.pet.name %> </p>
+        <p><%= @listing.pet.species %> </p>
+    </div>
+<% end %>

@@ -4,7 +4,7 @@
     class ReportsController < BaseController
 
       def new
-        @listing_report = ListingReport.new(session[:listing_report])
+        @listing_report = ListingReport.new(session[:listing_info])
       end
 
       def create
@@ -32,13 +32,13 @@
       end
 
       def set_session_data
-        session[:listing_report] = {
+        session[:listing_info] = {
           listing_type: @listing_report.listing_type,
           lost_found_date: @listing_report.lost_found_date,
           address: @listing_report.address,
           crossroads: @listing_report.crossroads,
           pet_description: @listing_report.pet_description,
-          comment: @listing_report.comment
+          comment: @listing_report.comment,
         }
       end
     end

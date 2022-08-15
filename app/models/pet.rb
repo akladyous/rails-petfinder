@@ -1,5 +1,5 @@
 class Pet < ApplicationRecord
-  belongs_to :user
+  belongs_to :listing
   has_one_attached :image
 
   enum :species, {

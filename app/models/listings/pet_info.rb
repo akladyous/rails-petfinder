@@ -4,7 +4,7 @@ module Listings
 
     attr_accessor :name, :species, :gender, :size, :breed, :color, :coat, :age, :height, :weight, :microchip, :collar, :description
 
-    validates :species, :size, :color, :collar, :description, presence: true
+    validates :name, :species, :gender, :size, presence: true
 
   end
 end

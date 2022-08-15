@@ -5,14 +5,20 @@
     class PetsController < BaseController
 
       def new
-        @pet_info = PetInfo.new(session[:petinfo])
+        @petinfo = PetInfo.new(session[:petinfo])
       end
 
       def create
-        @pet_info = PetInfo.new(petinfo_params)
+        @petinfo = PetInfo.new(petinfo_params)
         set_session_data
-        if @pet_info.valid?
-          redirect_to wizards_listings_pets_path
+        if @petinfo.valid?
+          listing = ListingCreation.call(session)
+          debugger
+          if listing.save
+            session.delete(:listing_info)
+            session.delete(:pet_info)
+            redirect_to listings_completed_path(listing)
+          end
         else
           render :new
         end
@@ -22,25 +28,25 @@
 
       def petinfo_params
         params
-          .require(:pet)
+          .require(:listings_pet_info)
           .permit(:name,:species,:gender,:size,:breed,:color,:coat,:age,:height,:weight,:microchip,:collar,:description)
       end
 
       def set_session_data
-        sesstion[:petinfo] = {
-          name: @pet_info.name,
-          species: @pet_info.species,
-          gender: @pet_info.gender,
-          size: @pet_info.size,
-          breed: @pet_info.breed,
-          color: @pet_info.color,
-          coat: @pet_info.coat,
-          age: @pet_info.age,
-          height: @pet_info.height,
-          weight: @pet_info.weight,
-          microchip: @pet_info.microchip,
-          collar: @pet_info.collar,
-          descriptio: @pet_info.descriptio,
+        session[:petinfo] = {
+          name: @petinfo.name,
+          species: @petinfo.species,
+          gender: @petinfo.gender,
+          size: @petinfo.size,
+          breed: @petinfo.breed,
+          color: @petinfo.color,
+          coat: @petinfo.coat,
+          age: @petinfo.age,
+          height: @petinfo.height,
+          weight: @petinfo.weight,
+          microchip: @petinfo.microchip,
+          collar: @petinfo.collar,
+          description: @petinfo.description,
         }
       end
 
