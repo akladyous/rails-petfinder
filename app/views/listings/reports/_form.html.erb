@@ -1,7 +1,6 @@
-
 <%# render 'form' %>
 
-<%= turbo_frame_tag "form_wizard", data: {turbo_action: 'advance'} do %>
+<%= turbo_frame_tag "form_wizard" do %>
     <div class="container mt-4">
         <div class="row justify-content-md-center">
             <div class="col col-lg-6 col-md-6 col-sm-6">
@@ -15,7 +14,7 @@
                         </div>
                         <!-- [:listings, :reports, @listing_report] -->
 
-                        <%= form_with model: @listing_report, url: listings_reports_path, class: 'needs-validation' do |form| %>
+                        <%= form_with model: listing_report, url: listings_reports_path, class: 'needs-validation' do |form| %>
 
                             <%= content_tag :div, nil, { class: 'form-group'} do %>
                                 <%= form.label  :listing_type %>
@@ -28,39 +27,39 @@
                             <%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
                                 <%= form.label :date_last_seen, { class: 'form-label'} %>
                                 <%= form.date_field :lost_found_date, {value: Time.now.strftime("%Y-%m-%d"), class: 'form-control'} %>
-                                <%= feedback_for? @listing_report, :lost_found_date %>
+                                <%= feedback_for? listing_report, :lost_found_date %>
                             <% end %>
 
                             <%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
                                 <%= form.label :Nearest_Address_Last_Seen, { class: 'form-label'} %>
                                 <%= form.text_field :address, { class: 'form-control'} %>
-                                <%= feedback_for? @listing_report, :address %>
+                                <%= feedback_for? listing_report, :address %>
                             <% end %>
 
                             <%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
                                 <%= form.label 'Nearest cross streets, landmark or location', { class: 'form-label'} %>
                                 <%= form.text_field :crossroads, { class: 'form-control'} %>
-                                <%= feedback_for? @listing_report, :crossroads %>
+                                <%= feedback_for? listing_report, :crossroads %>
                             <% end %>
 
                             <%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
                                 <%= form.label :pet_description, { class: 'form-label'} %>
                                 <%= form.text_area :pet_description, { class: 'form-control'} %>
-                                <%= feedback_for? @listing_report, :pet_description %>
+                                <%= feedback_for? listing_report, :pet_description %>
                             <% end %>
 
                             <%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
                                 <%= form.label :comment, { class: 'form-label'} %>
                                 <%= form.text_area :comment, { class: 'form-control'} %>
-                                <%= feedback_for? @listing_report, :comment %>
+                                <%= feedback_for? listing_report, :comment %>
                             <% end %>
 
                             <%= content_tag :div, nil, { class: "form-control text-center border-0 mt-3" } do %>
                                 <%= form.submit "Continue",
                                     class: "btn btn-light rounded-pill py-2 px-4"
                                 %>
-                                <% end %>
-
+                            <% end %>
+                            <!-- data: { turbo_action: "replace" }, -->
                         <% end %>
                     </div>
                 </div>
@@ -70,4 +69,3 @@
 
 <% end %>
 <%# console %>
-<!-- data: { turbo_action: "replace" }, -->

@@ -1,0 +1,8 @@
+<div class="container">
+    <% @listings.each do |listing| %>
+        <ul>
+            <li><%= listing.listing_type %></li>
+            <li><%= listing.lost_found_date %></li>
+        </ul>
+    <% end %>
+</div>

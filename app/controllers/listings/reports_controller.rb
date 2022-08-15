@@ -3,12 +3,8 @@
   module Listings
     class ReportsController < BaseController
 
-      # def index
-      #   redirect_to action: 'new'
-      # end
-
       def new
-        @listing_report = ListingReport.new
+        @listing_report = ListingReport.new(session[:listing_report])
       end
 
       def create
@@ -18,6 +14,7 @@
           set_session_data
           redirect_to new_listings_pet_path
         else
+          flash[:error] = 'form error'
           render :new
         end
       end

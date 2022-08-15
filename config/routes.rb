@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  resources :books
-
   # namespace :wizards do
     namespace :listings do
       resources :reports, only: [:new, :create]
@@ -8,6 +6,8 @@ Rails.application.routes.draw do
       resources :completed, only: :show
     end
   # end
+
+    # get 'listings/reports', to: 'listings/reports#new'
 
   devise_for :users
   root "home#index"
