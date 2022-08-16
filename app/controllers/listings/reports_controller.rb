@@ -10,7 +10,6 @@
       def create
         @listing_report = ListingReport.new(listing_report_params)
         if @listing_report.valid?
-          # listing_report_params.to_h
           set_session_data
           redirect_to new_listings_pet_path
         else
