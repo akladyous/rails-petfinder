@@ -7,8 +7,6 @@ Rails.application.routes.draw do
     end
   # end
 
-    # get 'listings/reports', to: 'listings/reports#new'
-
   devise_for :users
   root "home#index"
 end
