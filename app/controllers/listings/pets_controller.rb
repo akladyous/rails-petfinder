@@ -28,11 +28,12 @@
       def petinfo_params
         params
           .require(:listings_pet_info)
-          .permit(:name,:species,:gender,:size,:breed,:color,:coat,:age,:height,:weight,:microchip,:collar,:description)
+          .permit(:image, :name,:species,:gender,:size,:breed,:color,:coat,:age,:height,:weight,:microchip,:collar,:description)
       end
 
       def set_session_data
         session[:petinfo] = {
+          image: @petinfo.image,
           name: @petinfo.name,
           species: @petinfo.species,
           gender: @petinfo.gender,

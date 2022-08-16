@@ -16,15 +16,16 @@
 
                         <%= form_with model: @petinfo, url: listings_pets_path, class: 'needs-validation' do |form| %>
 
-                        <div class="form-group mb-3 pet-image">
-                            <% if @petinfo.image.attached? %>
-                                <%# image_tag @petinfo.pet.pet_image.representation(resize_to_limit: [100, 100]) %>
-                                <%= image_tag @petinfo.pet.pet_image %>
+                        <%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
+                            <% if @petinfo.image.present? %>
+                                <%= image_tag @petinfo.image %>
                             <% else %>
-                                <%# pet_builder.file_field :pet_image, direct_upload: true,  { class: 'image-fluid'} %>
-                                <%= pet_builder.file_field :pet_image, {multiple: false, direct_upload: true, class: 'image-fluid' } %>
+                                <%= form.label :image, { class: 'form-label' } %>
+                                <%= form.file_field :image, {multiple: false, direct_upload: true, class: 'image-fluid' } %>
                             <% end %>
-                        </div>
+                        <% end %>
+                        <!-- image_tag  ActiveStorage::Blob.last -->
+                        <%# image_path url_for(@petinfo.image) %>
 
                         <%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
                             <%= form.label :name, { class: 'form-label' } %>
@@ -73,5 +74,5 @@
             </div>
         </div>
     </div>
-
+<%= console %>
 <% end %>
