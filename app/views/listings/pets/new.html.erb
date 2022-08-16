@@ -9,23 +9,10 @@
                         Pet info
                     </div>
                     <div class="card-body">
-                        <!-- <div class="user-avatar">
-                            <%# image_tag("avatar.jpeg", size: '100x100', alt:'avatar', class: 'rounded mx-auto d-block') %>
-                        </div> -->
-
-
                         <%= form_with model: @petinfo, url: listings_pets_path, class: 'needs-validation' do |form| %>
 
-                        <%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
-                            <% if @petinfo.image.present? %>
-                                <%= image_tag @petinfo.image %>
-                            <% else %>
-                                <%= form.label :image, { class: 'form-label' } %>
-                                <%= form.file_field :image, {multiple: false, direct_upload: true, class: 'image-fluid' } %>
-                            <% end %>
-                        <% end %>
+
                         <!-- image_tag  ActiveStorage::Blob.last -->
-                        <%# image_path url_for(@petinfo.image) %>
 
                         <%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
                             <%= form.label :name, { class: 'form-label' } %>
@@ -74,5 +61,5 @@
             </div>
         </div>
     </div>
-<%= console %>
+<%# console %>
 <% end %>

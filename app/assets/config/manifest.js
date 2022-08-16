@@ -7,7 +7,7 @@
 //= link home_page.css
 //= link style.css
 //= direct_uploads.css
-//= direct_uploads.js
 
-//= require activestorage
+
+// require activestorage
 // direct_uploads.js
