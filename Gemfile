@@ -60,6 +60,8 @@ group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
+  gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master', require: false
+
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem 'solargraph', '~> 0.45.0'
   gem 'solargraph-rails', '~> 0.3.1'
