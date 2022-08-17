@@ -1,8 +1,36 @@
-<div class="container">
-    <% @listings.each do |listing| %>
-        <ul>
-            <li><%= listing.listing_type %></li>
-            <li><%= listing.lost_found_date %></li>
-        </ul>
-    <% end %>
-</div>
+
+
+<%= turbo_frame_tag "Listings"  do %>
+    <div class="container mt-4 w-75">
+        <div class="row justify-content-md-center">
+            <table class="table">
+                <thead>
+                    <th scope="col">Listing Type</th>
+                    <th scope="col">Created At</th>
+                    <th scope="col">Pet Name</th>
+                    <th scope="col">Pet Age</th>
+                    <th scope="col">Lost & Found Date</th>
+                    <th scope="col"></th>
+                </thead>
+                <tbody>
+                    <% @listings.each do |listing| %>
+                        <tr>
+                            <td><%= listing.listing_type %></td>
+                            <td><%= listing.created_at.strftime("%d %b %y") %></td>
+                            <td><%= listing.pet.name %></td>
+                            <td><%= listing.pet.age %></td>
+                            <td><%= listing.lost_found_date %></td>
+                            <td>
+                                <%= link_to listings_report_path(listing), target: :_top do %>
+                                    <i class="bi bi-box-arrow-up-left"></i>
+                                <% end %>
+                            </td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+            <%= link_to "Report new Listing", new_listings_report_path, target: :_top %>
+        </div>
+    </div>
+<%= console %>
+<% end %>

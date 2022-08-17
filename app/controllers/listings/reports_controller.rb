@@ -3,8 +3,16 @@
   module Listings
     class ReportsController < BaseController
 
+      def index
+        @listings = Listing.all.includes(:pet).order(created_at: :desc)
+      end
+
       def new
         @listing_report = ListingReport.new(session[:listing_info])
+      end
+
+      def show
+        @listing = Listing.find_by(id: params[:id])
       end
 
       def create
