@@ -1,9 +1,11 @@
 <% content_for :content do %>
-    <div class="container mt-4" id="wizards-container">
+    <%= turbo_frame_tag "posts_main" do %>
+    <div class="container mt-4" id="posts-container">
         <h1 class="text-center">Lost & Found home page</h1>
         <%= render 'flash' %>
         <%= yield %>
     </div>
+    <% end %>
 <% end %>
 
 <%= render template: "layouts/application" %>
