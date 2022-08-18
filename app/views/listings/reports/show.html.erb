@@ -71,10 +71,16 @@
                             </div>
                         </div>
                     </div>
+                    <br>
+                    <%= link_to "back", :back, {
+                        data:
+                            { turbo_frame: :_top },
+                            rel: 'prev',
+                            class: 'btn btn-light rounded-pill py-2 px-4 text-warning'
+                    } %>
                 </div>
             </div>
         </div>
     </div>
-
 <% end %>
 
