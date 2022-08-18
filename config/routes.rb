@@ -5,7 +5,7 @@ Rails.application.routes.draw do
       resources :pets, only: [:new, :create]
       resources :completed, only: :show
 
-      resources :posts, only: [:index, :show]
+      resources :posts, only: [:index, :show, :post]
     end
 
   devise_for :users
