@@ -1,0 +1,9 @@
+<% content_for :content do %>
+    <div class="container mt-4" id="wizards-container">
+        <h1 class="text-center">Lost & Found home page</h1>
+        <%= render 'flash' %>
+        <%= yield %>
+    </div>
+<% end %>
+
+<%= render template: "layouts/application" %>
