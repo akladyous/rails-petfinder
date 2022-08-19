@@ -1,24 +1,20 @@
-
-
 <%= turbo_frame_tag "form_wizard", data: {turbo_action: 'advance'} do %>
-    <div class="container mt-4">
-        <div class="row justify-content-md-center">
-            <div class="col col-lg-6 col-md-6 col-sm-6">
-                <div class="card">
-                    <div class="card-header text-center">
-                        Pet info
-                    </div>
-                    <div class="card-body">
-                        <%= form_with model: @petinfo, url: listings_pets_path, class: 'needs-validation' do |form| %>
-
-                        <%= content_tag :div, "upload image", {
+  <div class="container mt-4">
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-6 col-md-6 col-sm-6">
+        <div class="card">
+          <div class="card-header text-center">
+            Pet info
+          </div>
+          <div class="card-body">
+            <%= form_with model: @petinfo, url: listings_pets_path, class: 'needs-validation' do |form| %>
+              <%= content_tag :div, "upload image", {
                                 class: 'image-container container mb-2 d-flex flex-column justify-content-md-center',
                                 data: { controller: 'image', image_target: 'imageContainer' }
                             } do %>
-
-                            <%= form.label :image, { class: 'form-label mx-auto' }  do %>
-                                <%# if @petinfo.image %>
-                                <%= image_tag  "adapt_icon/2.png", {
+                <%= form.label :image, { class: 'form-label mx-auto' }  do %>
+                  <%# if @petinfo.image %>
+                  <%= image_tag  "adapt_icon/2.png", {
                                         class: "image-fluid w-100",
                                         alt: "pet-image",
                                         data: {
@@ -30,7 +26,7 @@
                                         }
                                     }
                                 %>
-                                    <%= form.file_field :image,
+                  <%= form.file_field :image,
                                         {
                                             class: 'image-fluid d-none',
                                             multiple: false,
@@ -38,63 +34,53 @@
                                             data: { image_target: 'input', action: "image#handleChange"}
                                         }
                                     %>
-                            <% end %>
-                        <% end %>
-                        <!-- image_tag  ActiveStorage::Blob.last -->
-
-                        <%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
-                            <%= form.label :name, { class: 'form-label' } %>
-                            <%= form.text_field :name, { class: 'form-control' } %>
-                            <%= feedback_for? @petinfo, :name %>
-                        <% end %>
-
-                        <%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
-                            <%= form.label :species, { class: 'form-label' } %>
-                            <%= form.select :species,
+                <% end %>
+              <% end %>
+              <!-- image_tag  ActiveStorage::Blob.last -->
+              <%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
+                <%= form.label :name, { class: 'form-label' } %>
+                <%= form.text_field :name, { class: 'form-control' } %>
+                <%= feedback_for? @petinfo, :name %>
+              <% end %>
+              <%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
+                <%= form.label :species, { class: 'form-label' } %>
+                <%= form.select :species,
                                 options_for_select(pet_input_selector :species ),
                                 { include_blank: true },
                                 { class: 'form-select' } %>
-                                <%= feedback_for? @petinfo, :species %>
-                        <% end %>
-
-                        <%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
-                            <%= form.label :gender, { class: 'form-label' } %>
-                            <%= form.select :gender,
+                <%= feedback_for? @petinfo, :species %>
+              <% end %>
+              <%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
+                <%= form.label :gender, { class: 'form-label' } %>
+                <%= form.select :gender,
                                 options_for_select( pet_input_selector :gender ),
                                 { include_blank: true },
                                 { class: 'form-select' } %>
-                                <%= feedback_for? @petinfo, :gender %>
-                        <% end %>
-
-                        <%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
-                            <%= form.label :size, { class: 'form-label' } %>
-                            <span>optional</span>
-                            <%= form.select :size,
+                <%= feedback_for? @petinfo, :gender %>
+              <% end %>
+              <%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
+                <%= form.label :size, { class: 'form-label' } %>
+                <span>optional</span>
+                <%= form.select :size,
                                 options_for_select(pet_input_selector :size),
                                 { include_blank: true },
                                 { class: 'form-select' } %>
-                                <%= feedback_for? @petinfo, :size %>
-                        <% end %>
-
-                        <%= content_tag :div, nil, { class: "form-control text-center border-0 mt-3" } do %>
-                            <% form.submit "submit", class: "btn btn-light rounded-pill py-2 px-4" %>
-                        <% end %>
-
-                    <% end %>
-
-                    <%= link_to "back", new_listings_report_path,
+                <%= feedback_for? @petinfo, :size %>
+              <% end %>
+              <%= content_tag :div, nil, { class: "form-control text-center border-0 mt-3" } do %>
+                <% form.submit "submit", class: "btn btn-light rounded-pill py-2 px-4" %>
+              <% end %>
+            <% end %>
+            <%= link_to "back", new_listings_report_path,
                         {
                             data: { turbo_frame: :_top},
-                            rel: 'next',
+                            rel: 'prev',
                             class: "btn btn-light rounded-pill py-2 px-4 text-warning"
                         }
                     %>
-                    <%= redirect_back_or_to root_path, allow_other_host: false %>
-
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
+      </div>
     </div>
-<%# console %>
+  </div>
 <% end %>
