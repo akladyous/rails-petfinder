@@ -2566,70 +2566,8 @@ h3 {
     border-top: 1px solid #e0e0e0;
     padding-bottom: 30px;
 }
+/* -------------------------------------------------- */
 
-/* line 1, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_bradcam.scss */
-.breadcam_bg {
-    background-image: url(../img/banner/bradcam.png);
-}
-
-/* line 4, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_bradcam.scss */
-.breadcam_bg_1 {
-    background-image: url(../img/banner/bradcam2.png);
-}
-
-/* line 7, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_bradcam.scss */
-.breadcam_bg_2 {
-    background-image: url(../img/banner/bradcam3.png);
-}
-
-/* line 10, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_bradcam.scss */
-.bradcam_area {
-    background-size: cover;
-    background-position: center center;
-    padding: 160px 0;
-    background-position: bottom;
-    background-repeat: no-repeat;
-}
-
-@media (max-width: 767px) {
-    /* line 10, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_bradcam.scss */
-    .bradcam_area {
-        padding: 150px 0;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-    /* line 10, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_bradcam.scss */
-    .bradcam_area {
-        padding: 150px 0;
-    }
-}
-
-/* line 22, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_bradcam.scss */
-.bradcam_area h3 {
-    font-size: 50px;
-    color: #fff;
-    font-weight: 900;
-    margin-bottom: 0;
-    font-family: "Poppins", sans-serif;
-    text-transform: capitalize;
-}
-
-@media (max-width: 767px) {
-    /* line 22, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_bradcam.scss */
-    .bradcam_area h3 {
-        font-size: 30px;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-    /* line 22, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_bradcam.scss */
-    .bradcam_area h3 {
-        font-size: 40px;
-    }
-}
-
-/* line 38, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_bradcam.scss */
 .popup_box {
     background: #fff;
     display: inline-block;
@@ -2637,38 +2575,28 @@ h3 {
     width: 681px;
     padding: 60px 40px;
 }
-
 @media (max-width: 767px) {
-    /* line 38, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_bradcam.scss */
     .popup_box {
         width: 320px;
         padding: 45px 30px;
     }
 }
-
 @media only screen and (min-width: 576px) and (max-width: 767px) {
-    /* line 38, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_bradcam.scss */
     .popup_box {
         width: 420px !important;
         padding: 45px 30px;
     }
 }
-
-/* line 57, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_bradcam.scss */
 .popup_box h3 {
     text-align: center;
     font-size: 22px;
     color: #1f1f1f;
     margin-bottom: 46px;
 }
-
-/* line 63, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_bradcam.scss */
 .popup_box .boxed-btn3 {
     width: 100%;
     text-transform: capitalize;
 }
-
-/* line 67, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_bradcam.scss */
 .popup_box .nice-select {
     -webkit-tap-highlight-color: transparent;
     background-color: #fff;
@@ -2704,8 +2632,6 @@ h3 {
     font-weight: 400;
     color: #919191;
 }
-
-/* line 101, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_bradcam.scss */
 .popup_box .nice-select::after {
     content: "\f0d7";
     display: block;
@@ -2722,7 +2648,6 @@ h3 {
     font-size: 15px;
 }
 
-/* line 116, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_bradcam.scss */
 .popup_box .nice-select.open .list {
     opacity: 1;
     pointer-events: auto;
@@ -2733,13 +2658,11 @@ h3 {
     overflow-y: scroll;
 }
 
-/* line 125, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_bradcam.scss */
 .popup_box .nice-select.list {
     height: 200px;
     overflow-y: scroll;
 }
 
-/* line 131, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_bradcam.scss */
 #test-form {
     display: inline-block;
     margin: auto;
@@ -2754,7 +2677,6 @@ h3 {
 }
 
 @media (max-width: 767px) {
-    /* line 131, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_bradcam.scss */
     #test-form {
         top: 0;
         left: 0;
@@ -2767,19 +2689,16 @@ h3 {
     }
 }
 
-/* line 146, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_bradcam.scss */
 #test-form .mfp-close-btn-in .mfp-close {
     color: #333;
     display: none !important;
 }
 
-/* line 151, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_bradcam.scss */
 #test-form button.mfp-close {
     display: none !important;
 }
 
 @media (max-width: 767px) {
-    /* line 151, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_bradcam.scss */
     #test-form button.mfp-close {
         display: block !important;
         position: absolute;
@@ -2789,7 +2708,6 @@ h3 {
     }
 }
 
-/* line 162, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_bradcam.scss */
 #test-form button.mfp-close {
     overflow: visible;
     cursor: pointer;
@@ -2816,7 +2734,6 @@ h3 {
     color: #fff !important;
 }
 
-/* line 189, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_bradcam.scss */
 .mfp-bg {
     top: 0;
     left: 0;
@@ -2830,7 +2747,6 @@ h3 {
 }
 
 @media (max-width: 767px) {
-    /* line 208, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_bradcam.scss */
     .gj-picker.gj-picker-md.timepicker {
         width: 310px;
         left: 6px !important;
@@ -2838,7 +2754,6 @@ h3 {
 }
 
 @media (max-width: 767px) {
-    /* line 215, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_bradcam.scss */
     .gj-picker.gj-picker-md.datepicker.gj-unselectable {
         width: 320px;
         left: 0 !important;

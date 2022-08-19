@@ -72,8 +72,29 @@
     border: none;
     border-radius: 15px;
 }
+/* ---------- page header ---------- */
+.page-header {
+    background-size: cover;
+    background-position: center center;
+    padding: 160px 0;
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
+
+.page-header-bg {
+    background-image: url("banner/bradcam.png");
+}
+.page-header h3 {
+    font-size: 50px;
+    color: #fff;
+    font-weight: 900;
+    margin-bottom: 0;
+    font-family: "Poppins", sans-serif;
+    text-transform: capitalize;
+}
+
 /* ------------------------------------------- */
-#image-container {
+/* #image-container {
     width: 300px;
     height: 350px;
     max-width: 100%;
@@ -94,7 +115,7 @@
     display: block;
     height: 100%;
     border-radius: 20px;
-}
+} */
 /* ----------------------- */
 .listings-table td,
 th {

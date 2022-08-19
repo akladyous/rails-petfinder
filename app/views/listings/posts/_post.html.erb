@@ -1,8 +1,8 @@
 <div class="card m-2 card-area w-25">
-  <div style="width: 20rem;" id="image-container">
+  <div id="image-container" style="height: 25em;" >
     <!-- .representation(resize_to_fill: [300, 300, gravity: 'north']) -->
     <%= image_tag  listing.pet.image, {
-            class: "pet-image", alt: "pet-image",
+            class: "image-fluid", alt: "pet-image",
             data: {
                 image_target: "output",
                 bs_toggle: "tooltip",
