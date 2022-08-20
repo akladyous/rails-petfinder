@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     resources :reports, only: %i[index show new create]
     resources :pets, only: %i[new create show]
     resources :completed, only: :show
-    resources :posts, only: :index
+    resources :posts, only: %i[index create]
   end
 
   devise_for :users
