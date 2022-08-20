@@ -88,6 +88,7 @@
 
 .page-header-bg {
     background-image: url("banner/bradcam.png");
+    height: 150px;
 }
 .page-header h3 {
     font-size: 50px;
