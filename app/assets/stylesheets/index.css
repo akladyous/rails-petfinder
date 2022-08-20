@@ -64,11 +64,11 @@
     font-weight: 400;
     color: var(--orange);
 }
-.card-image-area {
+/* .card-image-area {
     height: 400px;
     width: 300px;
     border: none;
-}
+} */
 .card-area img {
     width: 100%;
     height: 100%;
