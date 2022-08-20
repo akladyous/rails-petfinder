@@ -1,10 +1,8 @@
-<%= turbo_frame_tag "posts" do %>
+<%# turbo_frame_tag "posts" do %>
   <div class="container text-center">
     <%= render 'search' %>
-    <div class="row row-cols-1 row-cols-md-3 row-cols-lg-3 g3">
-      <% @listings_posts.each do |listing| %>
-        <%= render 'post', listing: listing %>
-      <% end %>
-    </div>
+    <%= turbo_frame_tag "search_listings" do %>
+      <%= render 'list', listings: @listings_posts %>
+    <% end %>
   </div>
-<% end %>
+  <%# end %>

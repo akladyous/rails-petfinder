@@ -8,7 +8,7 @@ class Listing < ApplicationRecord
     if params[:query].blank?
       all
     else
-      where('name LIKE ?', "%#{sanitize_sql_like(params[:query])}%")
+      joins(:pet).where('pets.name LIKE ?', "%#{sanitize_sql_like(params[:query])}%")
     end
   end
 end

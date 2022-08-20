@@ -12,6 +12,8 @@ module ApplicationHelper
   end
 
   def input_selector(model, attribute)
-    model.public_send(attribute.pluralize.to_sym).map { |k, _| [k.capitalize, k] }
+    attribute = attribute.is_a?(String) ? attribute.to_sym : attribute
+    model.public_send(attribute).map { |k, _| [k.capitalize, k] }
+    # model.public_send(attribute.pluralize.to_sym).map { |k, _| [k.capitalize, k] }
   end
 end
