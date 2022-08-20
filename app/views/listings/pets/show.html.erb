@@ -6,12 +6,9 @@
           <%# ------------------------ %>
           <div class="col-md-5">
             <div class="card-area">
-              <%# .representation(resize_to_fill: [300, 300, gravity: 'north'])  %>
+              <%# data: {image_target: "output", bs_toggle: "tooltip", bs_placement: "top", bs_custom_class: "custom tooltip", bs_title: "upload your pet image"} %>
               <%= image_tag  @pet.image.representation(resize_to_fill: [400, 650, gravity: 'north']) , {
                 class: "", alt: "pet-image",
-                data: {
-                    image_target: "output", bs_toggle: "tooltip", bs_placement: "top", bs_custom_class: "custom tooltip", bs_title: "upload your pet image"
-                    }
                 }
             %>
             </div>
@@ -21,7 +18,7 @@
             <div class="card card-area">
               <%#  px-0 pt-3 d-flex flex-column %>
               <div class="card-header">Pet Details</div>
-              <div class="card-body">
+              <div class="card-body text-start">
                 <div class="row">
                   <div class="col-3">
                     <p class="fw-bold">Name</p>

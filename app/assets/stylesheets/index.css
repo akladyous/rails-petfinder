@@ -64,6 +64,11 @@
     font-weight: 400;
     color: var(--orange);
 }
+.card-image-area {
+    height: 400px;
+    width: 300px;
+    border: none;
+}
 .card-area img {
     width: 100%;
     height: 100%;
@@ -128,7 +133,6 @@ th {
     border: 1px solid var(--orange);
 }
 /* --------------- buttons --------------- */
-
 .boxed-btn {
     background: #fff;
     color: #ff3500;
