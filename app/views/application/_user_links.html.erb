@@ -1,0 +1,12 @@
+<% turbo_exempts_page_from_cache %>
+<% content_for :user_menu do %>
+  <div class="navbar-nav gap-3">
+    <% if user_signed_in? %>
+      <%= link_to current_user.email, edit_user_registration_path, class: 'current-user' %>
+      <%= button_to "Logout", destroy_user_session_path, class: "dropdown-item #{user_signed_in? ? '' : 'disabled'}", method: :delete %>
+    <% else %>
+      <%= link_to 'Signup', new_user_registration_path, { class: "nav-link"  } %>
+      <%= link_to "Login", new_user_session_path, { class: "btn btn-light d-none d-lg-block" } %>
+    <% end %>
+  </div>
+<% end %>

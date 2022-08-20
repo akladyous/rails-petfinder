@@ -3,6 +3,8 @@
 # module Wizards
 module Listings
   class PetsController < BaseController
+    skip_before_action :authenticate_user!
+
     def new
       @petinfo = PetInfo.new(session[:petinfo])
     end
