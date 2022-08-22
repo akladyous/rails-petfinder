@@ -240,8 +240,6 @@ th {
 .pagy-bootstrap-nav {
 }
 .pagination ul {
-    /* color: var(--orange); */
-    /* border: 1px solid var(--orange); */
 }
 .pagination li a {
     color: var(--orange) !important;
