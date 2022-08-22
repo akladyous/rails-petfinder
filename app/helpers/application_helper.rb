@@ -3,7 +3,7 @@ module ApplicationHelper
     return nil if object.errors.empty?
 
     if object.errors.has_key?(attribute)
-      return content_tag :div, nil, { class: %w[d-block invalid-feedback] } do
+      return content_tag :div, nil, { class: %w[d-block invalid-feedback mt-0] } do
         object.errors.full_messages_for(attribute).to_sentence
       end
     end

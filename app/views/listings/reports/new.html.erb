@@ -8,10 +8,7 @@
 			</div>
 			<div class="col-md-8 col-lg-8">
 				<!-- [:listings, :reports, @listing_report] -->
-				<%= form_with model:
-                    @listing_report,
-                    url: listings_reports_path,
-                    class: 'needs-validation' do |form| %>
+				<%= form_with model: @listing_report, url: listings_reports_path, class: 'new_report' do |form| %>
 					<div class="row text-start">
 						<div class="col-6">
 							<%= content_tag :div, nil, { class: 'form-group'} do %>
@@ -59,7 +56,7 @@
 							<% end %>
 						</div>
 						<%= content_tag :div, nil, { class: "form-control text-center border-0 mt-3" } do %>
-							<%= form.submit "Continue", class: "boxed-btn3 py-1 border-0" %>
+							<%= form.submit "Continue", class: "boxed-btn3 border-0" %>
 						<% end %>
 					</div>
 				<% end %>
@@ -67,3 +64,4 @@
 			<%= render 'form_contact' %>
 		</div>
 	<% end %>
+	<p class="text-decoration-none></p>
