@@ -31,21 +31,12 @@
         black 100%
     );
 }
-
-/* Normal desktop :1200px. */
-/* Normal desktop :992px. */
-/* Tablet desktop :768px. */
-/* small mobile :320px. */
-/* Large Mobile :480px. */
-/* 1. Theme default css */
-/* line 4, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_reset.scss */
 body {
     font-family: "Open Sans", sans-serif;
     font-weight: normal;
     font-style: normal;
 }
 
-/* line 11, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_reset.scss */
 .img {
     max-width: 100%;
     -webkit-transition: 0.3s;
@@ -54,7 +45,6 @@ body {
     transition: 0.3s;
 }
 
-/* line 15, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_reset.scss */
 a,
 .button {
     -webkit-transition: 0.3s;
@@ -62,21 +52,15 @@ a,
     -o-transition: 0.3s;
     transition: 0.3s;
 }
-
-/* line 19, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_reset.scss */
 a:focus,
 .button:focus,
 button:focus {
     text-decoration: none;
     outline: none;
 }
-
-/* line 24, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_reset.scss */
 a:focus {
     text-decoration: none;
 }
-
-/* line 27, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_reset.scss */
 a:focus,
 a:hover,
 .portfolio-cat a:hover,
@@ -84,13 +68,11 @@ a:hover,
     text-decoration: none;
 }
 
-/* line 33, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_reset.scss */
 a,
 button {
     outline: medium none;
 }
 
-/* line 37, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_reset.scss */
 h1,
 h2,
 h3,
