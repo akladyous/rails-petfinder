@@ -1,11 +1,11 @@
 module Listings
   class PostsController < BaseController
+    include Pagy::Backend
     skip_before_action :authenticate_user!
     before_action :listing_params
 
     def index
-      # @listings = Listing.all.includes(:pet).order(created_at: :desc).limit(20)
-      @listings_posts = Listing.search(listing_params)
+      @pagy, @listings_posts = pagy(Listing.search(listing_params), items: 9)
     end
 
     protected

@@ -51,9 +51,9 @@ gem 'sassc-rails'
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'image_processing', '~> 1.2'
+gem 'pagy', '~> 5.10', '>= 5.10.1'
 
 group :development, :test do
-  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
 end
 
 group :development do

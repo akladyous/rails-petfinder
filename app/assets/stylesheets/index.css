@@ -236,4 +236,19 @@ th {
 .boxed-btn4:focus {
     outline: none;
 }
+/* ----------------- pagy ----------------- */
+.pagy-bootstrap-nav {
+}
+.pagination ul {
+    /* color: var(--orange); */
+    /* border: 1px solid var(--orange); */
+}
+.pagination li a {
+    color: var(--orange) !important;
+}
+.pagination .active a {
+    color: white !important;
+    background-color: var(--orange);
+    border: 1px solid gray;
+}
 /* ------------------------------------------- */
