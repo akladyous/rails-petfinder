@@ -189,28 +189,6 @@ th {
     outline: none;
 }
 
-.boxed-btn4 {
-    background: #fff;
-    font-size: 16px;
-    font-weight: 500;
-    border: 1px solid transparent;
-    color: #ff3500;
-    padding: 17px 50px;
-    font-family: "Poppins", sans-serif;
-    display: inline-block;
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    border-radius: 30px;
-}
-
-.boxed-btn4:hover {
-    background: #ff3500;
-    color: #fff;
-    border: 1px solid #ff3500;
-}
-.boxed-btn4:focus {
-    outline: none;
-}
 /* ----------------- pagy ----------------- */
 .pagy-bootstrap-nav {
 }
