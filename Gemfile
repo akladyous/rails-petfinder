@@ -58,11 +58,14 @@ end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
-
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
+
+  # gem 'coderay', '~> 1.1', '>= 1.1.3'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'erb_lint', require: false
   gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master', require: false
   gem 'htmlbeautifier', '~> 1.3', '>= 1.3.1'
+  gem 'ruby-prof', '~> 0.16.2'
   gem 'solargraph', '~> 0.45.0'
   gem 'solargraph-rails', '~> 0.3.1'
   gem 'web-console'

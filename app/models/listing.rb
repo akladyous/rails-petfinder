@@ -5,10 +5,17 @@ class Listing < ApplicationRecord
   enum :listing_type, { lost: 0, found: 1 }, default: 0
 
   def self.search(params)
-    if params[:query].blank?
-      all
-    else
-      joins(:pet).where('pets.name LIKE ?', "%#{sanitize_sql_like(params[:query])}%")
+    return all unless params.present?
+
+    query = Listing.joins(:pet)
+    query = query.where('pets.name LIKE ?', sanitize_sql_like(params[:name]) + '%') if params.include?(:name)
+
+    params.except(:name).each do |k, v|
+      sub_query = { k => v }
+      sub_query.transform_keys!(&:to_sym)
+      query = query.joins(:pet).where(pets: sub_query)
+      # query = query.joins(:pet).where(sanitize_sql_hash_for_assignment(sub_query, self))
     end
+    query
   end
 end
