@@ -175,7 +175,6 @@
 }
 
 @media (min-width: 1200px) and (max-width: 1500px) {
-    /* line 92, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_slider.scss */
     .slider_area .dog_thumb img {
         max-width: 80%;
     }
