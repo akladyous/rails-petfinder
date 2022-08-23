@@ -3,12 +3,6 @@
     padding-bottom: 24px;
 }
 
-@media (max-width: 767px) {
-    .pet_care_area {
-        padding-top: 0px;
-        padding-bottom: 0px;
-    }
-}
 .pet_care_area .pet_thumb img {
     width: 100%;
 }

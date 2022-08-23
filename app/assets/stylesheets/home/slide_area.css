@@ -48,6 +48,7 @@
     bottom: -94px;
     z-index: 1;
 }
+/*
 @media (max-width: 767px) {
     .slider_area .single_slider {
         height: 600px;
@@ -156,4 +157,4 @@
         font-size: 60px;
         line-height: 70px;
     }
-}
+} */
