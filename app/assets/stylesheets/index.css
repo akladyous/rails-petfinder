@@ -8,6 +8,12 @@ body {
     font-weight: normal;
     font-style: normal;
 }
+.text-orange {
+    color: var(--orange);
+}
+.bg-orange {
+    background-color: var(--orange);
+}
 /* --------------- navbar --------------- */
 .navbar {
     padding: 5px 25px !important;

@@ -411,7 +411,14 @@
     color: #fff;
     background: #ff3500;
 }
-/* ----------------------- xxxxxxxxxx ----------------------- */
-input:focus {
-    border: 1px solid var(--orange);
+/* ----------------------- form-control ----------------------- */
+.form-control:focus {
+    border-color: var(--orange) !important;
+    box-shadow: none !important;
 }
+.form-select:focus {
+    border-color: var(--orange) !important;
+    box-shadow: none !important;
+}
+
+/* ----------------------- form-control ----------------------- */
