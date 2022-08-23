@@ -412,3 +412,6 @@
     background: #ff3500;
 }
 /* ----------------------- xxxxxxxxxx ----------------------- */
+input:focus {
+    border: 1px solid var(--orange);
+}
