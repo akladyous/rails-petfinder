@@ -1,0 +1,22 @@
+.pet_care_area {
+    padding-top: 73px;
+    padding-bottom: 24px;
+}
+
+@media (max-width: 767px) {
+    .pet_care_area {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+}
+.pet_care_area .pet_thumb img {
+    width: 100%;
+}
+
+.pet_care_area .pet_info .section_title p {
+    color: #66666f;
+    line-height: 28px;
+    font-size: 16px;
+    margin-bottom: 54px;
+    margin-top: 30px;
+}
