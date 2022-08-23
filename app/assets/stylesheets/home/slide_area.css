@@ -132,7 +132,6 @@
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {
-    /* line 74, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_slider.scss */
     .slider_area .dog_thumb {
         right: 0;
         text-align: right;
