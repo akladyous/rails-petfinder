@@ -413,52 +413,6 @@ h3 {
     color: #fff;
 }
 
-/* line 2, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_section_title.scss */
-.section_title h3 {
-    font-size: 50px;
-    font-weight: 700;
-    line-height: 60px;
-    color: #191d34;
-    font-family: "Poppins", sans-serif;
-}
-
-/* line 8, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_section_title.scss */
-.section_title h3 span {
-    font-weight: 300;
-}
-
-@media (max-width: 767px) {
-    /* line 2, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_section_title.scss */
-    .section_title h3 {
-        font-size: 27px;
-        line-height: 33px;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-    /* line 2, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_section_title.scss */
-    .section_title h3 {
-        font-size: 32px;
-        line-height: 40px;
-    }
-}
-
-@media (min-width: 992px) and (max-width: 1200px) {
-    /* line 2, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_section_title.scss */
-    .section_title h3 {
-        font-size: 33px;
-        line-height: 40px;
-    }
-}
-
-/* line 24, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_section_title.scss */
-.section_title p {
-    font-size: 16px;
-    line-height: 30px;
-    color: #909092;
-    font-weight: 400;
-}
-
 /* line 31, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_section_title.scss */
 .mb-100 {
     margin-bottom: 100px;
@@ -554,27 +508,23 @@ h3 {
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-    /* line 85, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_section_title.scss */
     .section_title3.padding_plus {
         padding-top: 80px;
         padding-bottom: 40px;
     }
 }
 
-/* line 97, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_section_title.scss */
 .mb-55 {
     margin-bottom: 53px;
 }
 
 @media (max-width: 767px) {
-    /* line 97, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_section_title.scss */
     .mb-55 {
         margin-bottom: 30px;
     }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-    /* line 97, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_section_title.scss */
     .mb-55 {
         margin-bottom: 40px;
     }
