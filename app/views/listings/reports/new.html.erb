@@ -1,11 +1,14 @@
 <%# "row row-cols-3 row-cols-md-3 row-cols-lg-3 g3" %><%# render 'form' %>
 <%= turbo_frame_tag "form_wizard", data: {turbo_action: 'advance'} do %>
-	<div class="container mt-4">
-		<div class="row row-cols-2">
-			<div class="row-12 w-100 my-3">
-				<h3 class="card-header text-start">Report Lost & Found</h3>
-			</div>
+	<div class="row mx-4">
+		<div class="row-12 w-100 my-3">
+			<h3 class="card-header text-start">Report Lost & Found</h3>
+		</div>
+		<div class="col-md-8 col-lg-8 col-sm-12">
 			<%= render 'form' %>
+		</div>
+		<div class="col-md-4 col-lg-4 col-sm-12 d-flex flex-column" data-controller="image" data-image-target="imageContainer">
 			<%= render 'contact' %>
 		</div>
-	<% end %>
+	</div>
+<% end %>
