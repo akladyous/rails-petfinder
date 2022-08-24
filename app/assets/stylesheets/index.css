@@ -182,18 +182,7 @@ th {
     background-color: var(--orange);
     border: 1px solid gray;
 }
-/* ------------------------------------------- */
-/* input::file-selector-button {
-    color: white;
-    background-color: var(--orange);
-    font-size: 18px;
-    font-weight: 500;
-    color: #fff;
-    padding: 15px 30px;
-    font-family: "Poppins", sans-serif;
-    display: inline-block;
-    border-radius: 30px;
-} */
+/* -------------------- custom input-select -------------------- */
 .custom-file-input {
     color: transparent;
 }
@@ -225,3 +214,4 @@ th {
 .custom-file-input:active::before {
     background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
 }
+/* -------------------- custom input-select -------------------- */

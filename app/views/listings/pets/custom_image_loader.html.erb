@@ -1,0 +1,43 @@
+<%= content_tag :div, "upload image", {
+            class: 'image-container container mb-2 d-flex flex-column justify-content-md-center',
+            data: { controller: 'image', image_target: 'imageContainer' }
+        } do %>
+	<%= form.label :image, { class: 'form-label mx-auto' }  do %>
+		<%# if @petinfo.image %>
+		<%= image_tag  "banner/placeholder.png", {
+                    class: "image-fluid w-100",
+                    alt: "pet-image",
+                    data: {
+                        image_target: "output",
+                        bs_toggle: "tooltip",
+                        bs_placement: "top",
+                        bs_custom_class: "custom tooltip",
+                        bs_title: "upload your pet image"
+                    }
+                }
+            %>
+		<%= form.file_field :image,
+                    {
+                        class: 'image-fluid d-none',
+                        multiple: false,
+                        direct_upload: false,
+                        data: { image_target: 'input', action: "image#handleChange"}
+                    }
+                %>
+	<% end %>
+<% end %>
+<%# ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- %>
+<%= content_tag :div, "upload image", { class: "", style: "", data: { controller: 'image', image_target: 'imageContainer' } } do %>
+	<div class="row">
+		<div class="col d-flex flex-column justify-content-between">
+			<div class="img-thumbnail border-0 d-flex align-items-start">
+				<img src="https://via.placeholder.com/200" alt="placeholder" />
+				<%# image_tag  "banner/placeholder.png", { class: "img-fluid", style:" object-fit: contain", alt: "pet-image", data: { image_target: "output" } } %>
+			</div>
+			<div class="d-flex align-items-end">
+				<button data-action="image#triggerUpload" class="boxed-btn3 px-2">Select File</button>
+				<%= form.file_field :image, { class: 'd-none', multiple: false, direct_upload: false, data: { image_target: 'input', action: "image#handleChange"} } %>
+			</div>
+		</div>
+	</div>
+<% end %>
