@@ -1,6 +1,4 @@
 class Pet < ApplicationRecord
-  ActiveStorage::Current.host = 'http://localhost:3000'
-
   belongs_to :listing
   has_one_attached :image
 

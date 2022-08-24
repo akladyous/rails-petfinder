@@ -65,7 +65,6 @@ body {
     border: 1px solid var(--orange);
     padding: 10px;
     border-radius: 15px;
-    height: 100%;
 }
 .card-area .card-header {
     background-color: transparent;
@@ -78,7 +77,7 @@ body {
     width: 300px;
     border: none;
 } */
-.card-area img {
+.card-areax img {
     width: 100%;
     height: 100%;
     border: none;
@@ -108,29 +107,6 @@ body {
     text-transform: capitalize;
 }
 
-/* ------------------------------------------- */
-/* #image-container {
-    width: 300px;
-    height: 350px;
-    max-width: 100%;
-    max-height: 100%;
-}
-#image-container img {
-    width: 100%;
-    height: 100%;
-    border: none;
-    object-fit: cover;
-}
-
-.image-container {
-    height: 300px;
-    overflow: hidden;
-}
-.image-container img {
-    display: block;
-    height: 100%;
-    border-radius: 20px;
-} */
 /* ----------------------- */
 .listings-table td,
 th {

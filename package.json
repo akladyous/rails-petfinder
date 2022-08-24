@@ -14,8 +14,8 @@
         "sass": "^1.54.3"
     },
     "scripts": {
-        "build": "node esbuild.config.js",
-        "xbuild": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets",
+        "xbuild": "node esbuild.config.js",
+        "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets",
         "build:css": "sass ./app/assets/stylesheets/application.bootstrap.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules"
     },
     "devDependencies": {

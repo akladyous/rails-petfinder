@@ -19,3 +19,33 @@ export default class extends Controller {
         fileReader.readAsDataURL(input.files[0])
     };
 }
+
+/*
+        let input = this.inputTarget;
+        let container = this.imageContainerTarget
+        // let output = this.outputTarget;
+
+        let fileReader = new FileReader();
+        fileReader.onloadstart = () => {
+            spinner = document.createElement('i')
+            spinner.classList.add("fas fa-spinner fa-pulse")
+            container.insertAdjacentElement('afterbegin', spinner)
+        }
+        if (input.files[0]) {
+            fileReader.onload = () => {
+                imageTag.src = fileReader.result;
+            };
+            fileReader.onloadend = () => {
+                let imageTag = document.createElement('img');
+                fileReader.readAsDataURL(input.files[0])
+                // container.insertAdjacentElement('afterbegin', output)
+                input.parentElement.insertBefore(imageTag, input.nextSibling)
+            }
+            if (fileReader.readyState === 2) {
+                let imageTag = document.createElement('img');
+                fileReader.readAsDataURL(input.files[0])
+                // container.insertAdjacentElement('afterbegin', output)
+                input.parentElement.insertBefore(imageTag, input.nextSibling)
+            }
+        }
+*/
