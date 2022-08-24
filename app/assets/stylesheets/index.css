@@ -77,7 +77,7 @@ body {
     width: 300px;
     border: none;
 } */
-.card-areax img {
+.card-area img {
     width: 100%;
     height: 100%;
     border: none;
@@ -119,26 +119,28 @@ th {
     border: 1px solid var(--orange);
 }
 /* --------------- buttons --------------- */
-.boxed-btn3 {
+/* .boxed-btn3 {
     background-image: -moz-linear-gradient(0deg, #f14437 0%, #ed5b0d 99%);
     background-image: -webkit-linear-gradient(0deg, #f14437 0%, #ed5b0d 99%);
     background-image: -ms-linear-gradient(0deg, #f14437 0%, #ed5b0d 99%);
-}
+} */
 .boxed-btn3 {
+    color: #fff;
+    background-color: var(--orange);
+    border: 0;
     font-size: 18px;
     font-weight: 500;
-    color: #fff;
     padding: 15px 30px;
     font-family: "Poppins", sans-serif;
     display: inline-block;
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
     border-radius: 30px;
-    background-position: 100% 0;
-    background-position: 0 0;
+    /* background-position: 100% 0; */
+    /* background-position: 0 0; */
 }
 .boxed-btn3:hover {
-    background-size: 200% 200%;
+    /* background-size: 200% 200%; */
     color: #fff;
 }
 .boxed-btn3:focus {
@@ -181,3 +183,45 @@ th {
     border: 1px solid gray;
 }
 /* ------------------------------------------- */
+/* input::file-selector-button {
+    color: white;
+    background-color: var(--orange);
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    padding: 15px 30px;
+    font-family: "Poppins", sans-serif;
+    display: inline-block;
+    border-radius: 30px;
+} */
+.custom-file-input {
+    color: transparent;
+}
+.custom-file-input::-webkit-file-upload-button {
+    visibility: hidden;
+}
+.custom-file-input::before {
+    content: "Select File";
+    color: black;
+    display: inline-block;
+    background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 5px 8px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    text-shadow: 1px 1px #fff;
+    font-weight: 700;
+    font-size: 10pt;
+}
+.custom-file-input:hover::before {
+    border-color: black;
+}
+.custom-file-input:active {
+    outline: 0;
+}
+.custom-file-input:active::before {
+    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}

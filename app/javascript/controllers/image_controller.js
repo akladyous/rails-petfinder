@@ -5,6 +5,11 @@ export default class extends Controller {
     static targets = ["imageContainer", "input", "output"]
     connect() {
     }
+
+    triggerUpload(event) {
+        event.preventDefault();
+        this.inputTarget.click()
+    }
     handleChange(event) {
         let input = this.inputTarget;
         let output = this.outputTarget;

@@ -100,14 +100,9 @@
 		<div class="col-12">
 			<%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
 				<%= form.label :description, { class: 'form-label' } %>
-				<%= form.text_area :description, { class: 'form-control', rows: 5 } %>
+				<%= form.text_area :description, { class: 'form-control', rows: 7 } %>
 				<%= feedback_for? @petinfo, :size %>
 			<% end %>
 		</div>
-	</div>
-	<div class="col-12">
-		<%= content_tag :div, nil, { class: "form-control text-center border-0 mt-3" } do %>
-			<% form.submit "submit", class: "btn btn-light rounded-pill py-2 px-4" %>
-		<% end %>
 	</div>
 </div>
