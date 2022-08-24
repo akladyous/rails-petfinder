@@ -1,5 +1,5 @@
 <div class="row text-start">
-	<div class="row">
+	<div class="row mb-1">
 		<div class="col-md-8 col-lg-8 col-sm-12">
 			<%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
 				<%= form.label :name, { class: 'form-label' } %>
@@ -10,89 +10,77 @@
 		<div class="col-md-4 col-lg-4 col-sm-12">
 			<%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
 				<%= form.label :species, { class: 'form-label' } %>
-				<%= form.select :species,
-                            options_for_select(pet_input_selector :species ),
-                            { include_blank: true },
-                            { class: 'form-select' } %>
+				<%= form.select :species, options_for_select((pet_input_selector :species), selected: -> {@petinfo.species.blank? ? "" : @petinfo.species}.call ), { prompt: "Please Select" }, { class: 'form-select' } %>
 				<%= feedback_for? @petinfo, :species %>
 			<% end %>
 		</div>
 	</div>
-	<div class="row">
+	<div class="row mb-1">
 		<div class="col-md-4 col-lg-4 col-sm-12">
 			<%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
 				<%= form.label :breed, { class: 'form-label' } %>
 				<%= form.text_field :breed, { class: 'form-control' } %>
-				<%= feedback_for? @petinfo, :size %>
+				<%= feedback_for? @petinfo, :breed %>
 			<% end %>
 		</div>
 		<div class="col-md-4 col-lg-4 col-sm-12">
 			<%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
 				<%= form.label :color, { class: 'form-label' } %>
 				<%= form.text_field :color, { class: 'form-control' } %>
-				<%= feedback_for? @petinfo, :size %>
+				<%= feedback_for? @petinfo, :color %>
 			<% end %>
 		</div>
 		<div class="col-md-4 col-lg-4 col-sm-12">
 			<%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
 				<%= form.label :gender, { class: 'form-label' } %>
-				<%= form.select :gender,
-                                    options_for_select( pet_input_selector :gender ),
-                                    { include_blank: true },
-                                    { class: 'form-select' } %>
+				<%= form.select :gender, options_for_select((pet_input_selector :gender), selected: -> { @petinfo.gender.blank? ? "" : @petinfo.gender}.call ), { prompt: "Please Select" }, { class: 'form-select' } %>
 				<%= feedback_for? @petinfo, :gender %>
 			<% end %>
 		</div>
 	</div>
-	<div class="row">
+	<div class="row mb-1">
 		<div class="col-md-4 col-lg-4 col-sm-12">
 			<%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
 				<%= form.label :age, { class: 'form-label' } %>
 				<%= form.text_field :age, { class: 'form-control' } %>
-				<%= feedback_for? @petinfo, :size %>
+				<%= feedback_for? @petinfo, :age %>
 			<% end %>
 		</div>
 		<div class="col-md-4 col-lg-4 col-sm-12">
 			<%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
 				<%= form.label :coat, { class: 'form-label' } %>
 				<%= form.text_field :coat, { class: 'form-control' } %>
-				<%= feedback_for? @petinfo, :size %>
+				<%= feedback_for? @petinfo, :coat %>
 			<% end %>
 		</div>
 		<div class="col-md-4 col-lg-4 col-sm-12">
 			<%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
 				<%= form.label :size, { class: 'form-label' } %>
-				<%= form.select :size,
-                                    options_for_select(pet_input_selector :size),
-                                    { include_blank: true },
-                                    { class: 'form-select' } %>
+				<%= form.select :size, options_for_select((pet_input_selector :size), selected: -> {@petinfo.size.blank? ? "" : @petinfo.size}.call), { prompt: "Please Select" }, { class: 'form-select' } %>
 				<%= feedback_for? @petinfo, :size %>
 			<% end %>
 		</div>
 	</div>
-	<div class="row">
+	<div class="row mb-1">
 		<div class="col-md-4 col-lg-4 col-sm-12">
 			<%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
 				<%= form.label :height, { class: 'form-label' } %>
 				<%= form.text_field :height, { class: 'form-control' } %>
-				<%= feedback_for? @petinfo, :size %>
+				<%= feedback_for? @petinfo, :height %>
 			<% end %>
 		</div>
 		<div class="col-md-4 col-lg-4 col-sm-12">
 			<%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
 				<%= form.label :weight, { class: 'form-label' } %>
 				<%= form.text_field :weight, { class: 'form-control' } %>
-				<%= feedback_for? @petinfo, :size %>
+				<%= feedback_for? @petinfo, :weight %>
 			<% end %>
 		</div>
 		<div class="col-md-4 col-lg-4 col-sm-12">
 			<%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
 				<%= form.label :microchip, { class: 'form-label' } %>
-				<%= form.select :size,
-                                    options_for_select([["Yes", 1], ["No", 0]]),
-                                    { include_blank: true },
-                                    { class: 'form-select' } %>
-				<%= feedback_for? @petinfo, :size %>
+				<%= form.select :microchip, options_for_select([["Yes", 1], ["No", 0]], selected: -> {@petinfo.microchip.blank? ? "" : @petinfo.microchip}.call), { prompt: "Please Select" }, { class: 'form-select' } %>
+				<%= feedback_for? @petinfo, :microchip %>
 			<% end %>
 		</div>
 	</div>
@@ -101,8 +89,9 @@
 			<%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
 				<%= form.label :description, { class: 'form-label' } %>
 				<%= form.text_area :description, { class: 'form-control', rows: 7 } %>
-				<%= feedback_for? @petinfo, :size %>
+				<%= feedback_for? @petinfo, :description %>
 			<% end %>
 		</div>
 	</div>
 </div>
+<%= console %>

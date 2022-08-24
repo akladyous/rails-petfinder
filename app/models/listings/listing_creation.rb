@@ -1,7 +1,7 @@
 module Listings
   class ListingCreation
     def self.call(session)
-      self.new(session).call
+      new(session).call
     end
 
     def initialize(session)
@@ -11,14 +11,15 @@ module Listings
     def call
       listing = Current.current_user.listings.build(listing_params)
       listing.build_pet(pet_params)
-      return listing
+      listing
     end
 
-
     private
+
     def listing_params
       @session[:listing_info]
     end
+
     def pet_params
       @session[:petinfo]
     end
