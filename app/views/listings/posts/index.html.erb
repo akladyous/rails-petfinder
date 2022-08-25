@@ -1,7 +1,7 @@
 <%# turbo_frame_tag "posts" do %>
 	<div class="container text-center">
 		<%= render 'search' %>
-		<%= turbo_frame_tag "search_listings" do %>
+		<%= turbo_frame_tag "listing_search_results" do %>
 			<%= render 'list', listings: @listings_posts %>
 			<div class="row row-cols-3 row-cols-md-3 row-cols-lg-3 g3">
 				<div class="col-auto text-center">

@@ -1,45 +1,40 @@
 <div class="container-fluid px-0 card-area">
 	<h3>Search Missing Pets</h3>
-	<%= form_tag listings_posts_path, method: :get,
-        data: {
-            turbo_frame: "search_listings",
-            turbo_action: "advance",
-            controller: "search",
-            action: "input->search#submit"
-            } do
-    |form| %>
-	<div class="row row-cols-3 justify-content-center mx-0"">
-		<div class="col-3 mt-0">
-			<div class="form-group text-start mb-2">
-				<%= label_tag "Pet Name", nil, class: "form-label" %>
-				<%= text_field_tag "name", nil, class: "form-control" %>
+	<%= form_tag listings_posts_path, method: :get, data: {
+        turbo_frame: "listing_search_results",
+        turbo_action: "advance",
+        controller: "search",
+        action: "input->search#submit" } do |form| %>
+		<div class="row row-cols-3 justify-content-center mx-0"">
+			<div class="col-3 mt-0">
+				<div class="form-group text-start mb-2">
+					<%= label_tag "Pet Name", nil, class: "form-label" %>
+					<%= text_field_tag "name", nil, class: "form-control" %>
+				</div>
+			</div>
+			<div class="col-4 mt-0">
+				<div class="form-group text-start mb-2">
+					<%= label_tag "Species", nil, class: "form-label" %>
+					<%= select_tag "species",
+                        options_for_select(input_selector Pet, :species),
+                        { :class => 'form-select', auto_focus: true, include_blank: true } %>
+				</div>
+			</div>
+			<div class="col-4 mt-0">
+				<div class="form-group text-start mb-2">
+					<%= label_tag "Breed", nil, class: "form-label" %>
+					<%= select_tag "breed",
+                        options_from_collection_for_select(Pet.select(:breed).uniq, "breed", "breed", nil),
+                        { :class => 'form-select', auto_focus: true, include_blank: true } %>
+				</div>
 			</div>
 		</div>
-		<div class="col-4 mt-0">
-			<div class="form-group text-start mb-2">
-				<%= label_tag "Species", nil, class: "form-label" %>
-				<%= select_tag "species",
-        options_for_select(input_selector Pet, :species),
-        { :class => 'form-select', auto_focus: true, include_blank: true }
-        %>
+		<div class="row row-cols-3 justify-content-center mx-0"">
+			<div class="col-4 mt-0">
+				<div class="form-group text-center">
+					<%= submit_tag "Search", class: "boxed-btn3 py-0 border-0" %>
+				</div>
 			</div>
 		</div>
-		<div class="col-4 mt-0">
-			<div class="form-group text-start mb-2">
-				<%= label_tag "Breed", nil, class: "form-label" %>
-				<%= select_tag "breed",
-        options_from_collection_for_select(Pet.select(:breed).uniq, "breed", "breed", nil),
-        { :class => 'form-select', auto_focus: true, include_blank: true }
-        %>
-			</div>
-		</div>
-	</div>
-	<div class="row row-cols-3 justify-content-center mx-0"">
-		<div class="col-4 mt-0">
-			<div class="form-group text-center">
-				<%= submit_tag "Search", class: "boxed-btn3 py-0 border-0" %>
-			</div>
-		</div>
-	</div>
-<% end %>
+	<% end %>
 </div>

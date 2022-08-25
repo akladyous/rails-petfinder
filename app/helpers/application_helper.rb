@@ -10,6 +10,16 @@ module ApplicationHelper
     nil
   end
 
+  def inline_error_for(object, attribute)
+    html = []
+    if object.errors[attribute].any?
+      html << object.errors[attribute].each do |msg|
+        tag.div(msg, class: 'come class')
+      end
+    end
+    html.join_html_safe
+  end
+
   def input_selector(model, attribute)
     attribute = attribute.is_a?(String) ? attribute.to_sym : attribute
     model.public_send(attribute).map { |k, _| [k.capitalize, k] }
