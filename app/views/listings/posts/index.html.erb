@@ -1,5 +1,5 @@
 <%# turbo_frame_tag "posts" do %>
-	<div class="container text-center">
+	<div class="container text-center" id="lost_found_main">
 		<%= render 'search' %>
 		<%= turbo_frame_tag "listing_search_results" do %>
 			<%= render 'list', listings: @listings_posts %>

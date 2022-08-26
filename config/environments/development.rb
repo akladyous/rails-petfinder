@@ -81,4 +81,5 @@ Rails.application.configure do
     read_timeout: 5
   }
   # config.serve_static_assets = true
+  # config.assets.compile = true
 end

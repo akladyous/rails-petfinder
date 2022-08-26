@@ -25,4 +25,8 @@ module ApplicationHelper
     model.public_send(attribute).map { |k, _| [k.capitalize, k] }
     # model.public_send(attribute.pluralize.to_sym).map { |k, _| [k.capitalize, k] }
   end
+
+  def current_model(object)
+    object.class.name.gsub('::', '').underscore
+  end
 end
