@@ -1,96 +1,113 @@
 <%= turbo_frame_tag "#{dom_id(@pet)}" do %>
-	<div class="container w-75">
-		<div class="row">
-			<div class="col-md-12">
-				<div class="row">
-					<%# ------------------------ %>
-					<div class="col-md-5">
-						<div class="card-area">
-							<%# data: {image_target: "output", bs_toggle: "tooltip", bs_placement: "top", bs_custom_class: "custom tooltip", bs_title: "upload your pet image"} %>
-							<%= image_tag  @pet.image.representation(resize_to_fill: [400, 650, gravity: 'north']) , { class: "", alt: "pet-image", } %>
+	<div class="container px-5">
+		<div class="row row-cols-1 row-cols-md-2 row-col-lg-2" style="height: 700px;">
+			<div class="col col-sm-12 col-md-5 col-lg-5 h-100 py-3">
+				<div class="card-area h-100">
+					<%= image_tag  @pet.image.representation(resize_to_fill: [400, 650, gravity: 'north']) , { class: "", alt: "pet-image", } %>
+				</div>
+			</div>
+			<div class="col col-sm-12 col-md-7 col-lg-7 h-100 py-3">
+				<div class="card-area text-start h-100 d-flex flex-column justify-content-between">
+					<div class="container text-center fs-4 text-orange">Pet Details</div>
+					<div class="row mb-1">
+						<div class="col-3">
+							<strong class="fw-bold mb-0">Name</strong>
+						</div>
+						<div class="col-9">
+							<p class="mb-0"><%= @pet.name.upcase %></p>
 						</div>
 					</div>
-					<%# ------------------------ %>
-					<div class="col-md-7">
-						<div class="card card-area">
-							<%#  px-0 pt-3 d-flex flex-column %>
-							<div class="card-header">Pet Details</div>
-							<div class="card-body text-start">
-								<div class="row">
-									<div class="col-3">
-										<p class="fw-bold">Name</p>
-									</div>
-									<div class="col-9">
-										<p><%= @pet.name %></p>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-3">
-										<p class="fw-bold">Species</p>
-									</div>
-									<div class="col-9">
-										<p><%= @pet.species %></p>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-3">
-										<p class="fw-bold">Gender</p>
-									</div>
-									<div class="col-9">
-										<p><%= @pet.gender %></p>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-3">
-										<p class="fw-bold">Breed</p>
-									</div>
-									<div class="col-9">
-										<p><%= @pet.breed %></p>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-3">
-										<p class="fw-bold">Date last seen</p>
-									</div>
-									<div class="col-9">
-										<p><%= @pet.listing.lost_found_date.strftime("%d %b %y") %></p>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-3">
-										<p class="fw-bold">Last seen</p>
-									</div>
-									<div class="col-9">
-										<p class="px-0"><%= @pet.listing.address %></p>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-auto">
-										<p class="fw-bold">Description</p>
-									</div>
-									<div class="col-auto">
-										<p class="px-0"><%= @pet.listing.pet_description %></p>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-auto">
-										<p class="fw-bold">Message from <%= @pet.listing.listing_type == "lost" ? "owner" : "founder" %></p>
-									</div>
-									<div class="col-auto">
-										<p class="px-0 prova"><%= @pet.listing.comment %></p>
-									</div>
-								</div>
-							</div>
-							<div class="row mx-auto mb-2">
-								<%= link_to "Contact Owner", root_path, {
-                    data: { turbo_frame: :_top },
-                    rel: 'next',
-                    class: "boxed-btn3"}
-                %>
-							</div>
+					<div class="row mb-1">
+						<div class="col-3">
+							<p class="fw-bold mb-0">Species</p>
+						</div>
+						<div class="col-9">
+							<p class="mb-0"><%= @pet.species.upcase %></p>
 						</div>
 					</div>
-					<%# ------------------------ %>
+					<div class="row mb-1">
+						<div class="col-3">
+							<p class="fw-bold mb-0">Age</p>
+						</div>
+						<div class="col-9">
+							<p class="mb-0"><%= @pet.age.to_i.to_s %> years</p>
+						</div>
+					</div>
+					<div class="row mb-1">
+						<div class="col-3">
+							<p class="fw-bold mb-0">Gender</p>
+						</div>
+						<div class="col-9">
+							<p class="mb-0"><%= @pet.gender.upcase %></p>
+						</div>
+					</div>
+					<div class="row mb-1">
+						<div class="col-3">
+							<p class="fw-bold mb-0">Breed</p>
+						</div>
+						<div class="col-9">
+							<p class="mb-0"><%= @pet.breed.upcase %></p>
+						</div>
+					</div>
+					<div class="row mb-1">
+						<div class="col-3">
+							<p class="fw-bold mb-0">Color</p>
+						</div>
+						<div class="col-9">
+							<p class="mb-0"><%= @pet.color.upcase %></p>
+						</div>
+					</div>
+					<div class="row mb-1">
+						<div class="col-3">
+							<p class="fw-bold mb-0">Microchip</p>
+						</div>
+						<div class="col-9">
+							<p class="mb-0"><%= @pet.microchip %></p>
+						</div>
+					</div>
+					<div class="row mb-1">
+						<div class="col-3">
+							<p class="fw-bold mb-0">Collar</p>
+						</div>
+						<div class="col-9">
+							<p class="mb-0"><%= @pet.collar ? "Yes" : "No" %></p>
+						</div>
+					</div>
+					<div class="row mb-1">
+						<div class="col-3">
+							<p class="fw-bold mb-0">Date last seen</p>
+						</div>
+						<div class="col-9">
+							<p class="mb-0"><%= @pet.listing.lost_found_date.strftime("%d %b %y") %></p>
+						</div>
+					</div>
+					<div class="row mb-1">
+						<div class="col-3">
+							<p class="fw-bold mb-0">Last seen</p>
+						</div>
+						<div class="col-9">
+							<p class="mb-0"><%= @pet.listing.address %></p>
+						</div>
+					</div>
+					<div class="row mb-1">
+						<div class="col-auto">
+							<p class="fw-bold mb-0">Description</p>
+						</div>
+						<div class="col-auto">
+							<p class="mb-0 "><%= @pet.listing.pet_description %></p>
+						</div>
+					</div>
+					<div class="row mb-1">
+						<div class="col-auto">
+							<p class="fw-bold mb-0">Message from <%= @pet.listing.listing_type == "lost" ? "owner" : "founder" %></p>
+						</div>
+						<div class="col-auto">
+							<p class="mb-0 "><%= @pet.listing.comment %></p>
+						</div>
+					</div>
+					<div class="row mx-auto mb-1 text-center px-5">
+						<%= link_to "Contact Owner", root_path, { data: { turbo_frame: :_top }, rel: 'next', class: "boxed-btn3"} %>
+					</div>
 				</div>
 			</div>
 		</div>
