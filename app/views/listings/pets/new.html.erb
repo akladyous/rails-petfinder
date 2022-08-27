@@ -1,25 +1,32 @@
 <%= turbo_frame_tag "form_wizard", data: {turbo_action: 'advance'} do %>
-	<%= form_with model: @petinfo, url: listings_pets_path, class: 'needs-validation' do |form| %>
-		<div class="row mx-4">
-			<div class="row-12 w-100 my-3">
-				<h3 class="card-header text-start">Report Lost & Found</h3>
-			</div>
-			<div class="col-md-8 col-lg-8 col-sm-12">
-				<%= render 'form_inputs', form: form %>
-			</div>
-			<div class="col-md-4 col-lg-4 col-sm-12 d-flex flex-column justify-content-between" data-controller="image" data-image-target="imageContainer">
-				<%= render "form_image", form: form %>
-			</div>
-			<div class="col-8">
-				<%= content_tag :div, nil, { class: "form-control text-center border-0 mt-3" } do %>
-					<% form.submit "submit", class: "boxed-btn3 border-0 px-5" %>
-				<% end %>
-			</div>
-			<div class="col-4 text-center">
-				<%# ----- %>
-			</div>
+	<%= form_with model: @petinfo, url: listings_pets_path,
+        class: 'pet-info needs-validation',
+        data: {
+            controler: 'validate',
+            validate_target: 'form',
+            validate_status_value: true
+        } do |form|
+    %>
+	<div class="row mx-4">
+		<div class="row-12 w-100 my-3">
+			<h3 class="card-header text-start">Report Lost & Found</h3>
 		</div>
-		<%= link_to "back", new_listings_report_path, { data: { turbo_frame: :_top}, rel: 'prev', class: "btn btn-light rounded-pill py-2 px-4 text-warning" } %>
+		<div class="col-md-8 col-lg-8 col-sm-12">
+			<%= render 'form_inputs', form: form %>
+		</div>
+		<div class="col-md-4 col-lg-4 col-sm-12 d-flex flex-column justify-content-between" data-controller="image" data-image-target="imageContainer">
+			<%= render "form_image", form: form %>
+		</div>
+		<div class="col-8">
+			<%= content_tag :div, nil, { class: "form-control text-center border-0 mt-3" } do %>
+				<% form.submit "submit", class: "boxed-btn3 border-0 px-5" %>
+			<% end %>
+		</div>
+		<div class="col-4 text-center">
+			<%# ----- %>
+		</div>
 	</div>
+	<%= link_to "back", new_listings_report_path, { data: { turbo_frame: :_top}, rel: 'prev', class: "btn btn-light rounded-pill py-2 px-4 text-warning" } %>
+</div>
 <% end %>
 <% end %>
