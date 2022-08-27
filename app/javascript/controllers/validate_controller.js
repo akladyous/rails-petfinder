@@ -19,6 +19,7 @@ export default class extends Controller {
             feedBackTag.id = `${inputTag.id}-feedback`;
             inputTag.parentNode.insertAdjacentElement('beforeend', feedBackTag)
         }
+        console.log('connected...')
     };
     disconnect() {
         this.inputTargets
@@ -26,6 +27,7 @@ export default class extends Controller {
             .forEach(feedback => {
                 document.getElementById(feedback).remove();
             })
+        console.log('disconnected...')
     };
     getAttributesFor(attribute) {
         return attribute.match(/(^[^\[]+)(?=\[)|(([^\[\]]+)(?=\]))/g)
@@ -50,7 +52,7 @@ export default class extends Controller {
         } else {
             let inputTags = this.inputTargets.map(input => input.name)
             this.removeErrors(inputTags)
-            this.disconnect()
+            // this.disconnect()
             this.formTarget.submit();
         }
     };

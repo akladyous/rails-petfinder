@@ -13,8 +13,7 @@
 		<div class="col-md-8 col-lg-8 col-sm-12">
 			<%= content_tag :div, nil, { class: 'form-group mb-3'} do %>
 				<%= form.label  :listing_type, { class: 'form-label' }  %>
-				<%=
-                    form.select :listing_type,
+				<%= form.select :listing_type,
                     options_for_select(listing_type_options),
                     {},
                     { :class => 'form-select', auto_focus: true }
@@ -33,13 +32,12 @@
 		<div class="col-md-12 col-lg-12 col-sm-12">
 			<%= content_tag :div, nil, { class: 'form-group mb-3'} do %>
 				<%= form.label :Last_seed_Address, { class: 'form-group mb-0'} %>
-				<%=
-                    form.text_field :address, {
+				<%= form.text_field :address, {
                     class: 'form-control box-shadow',
                     data: {
                         validate_target: 'input',
                         action: "change->validate#handleChange",
-                        validate_index_param: true,
+                        validate_index_param: 1,
                         constrain: report_constrains[:address]
                         }
                     }
@@ -52,8 +50,7 @@
 		<div class="col-md-12 col-lg-12 col-sm-12">
 			<%= content_tag :div, nil, { class: 'form-group mb-3'} do %>
 				<%= form.label 'Nearest cross streets, landmark or location', { class: 'form-group mb-0'} %>
-				<%=
-                    form.text_field :crossroads, { class: 'form-control',
+				<%= form.text_field :crossroads, { class: 'form-control',
                     data: {
                         validate_target: 'input',
                         action: "change->validate#handleChange",
@@ -69,8 +66,7 @@
 		<div class="col-md-12 col-lg-12 col-sm-12">
 			<%= content_tag :div, nil, { class: 'form-group mb-3'} do %>
 				<%= form.label :pet_description, { class: 'form-group mb-0'} %>
-				<%=
-                    form.text_area :pet_description, { class: 'form-control', rows: 5,
+				<%= form.text_area :pet_description, { class: 'form-control', rows: 5,
                     data: {
                         validate_target: 'input',
                         action: "change->validate#handleChange",
@@ -86,8 +82,7 @@
 		<div class="col-md-12 col-lg-12 col-sm-12">
 			<%= content_tag :div, nil, { class: 'form-group mb-3'} do %>
 				<%= form.label :comment, { class: 'form-group mb-0'} %>
-				<%=
-                    form.text_area :comment, { class: 'form-control', rows: 5,
+				<%= form.text_area :comment, { class: 'form-control', rows: 5,
                     data: {
                         validate_target: 'input',
                         action: "change->validate#handleChange",

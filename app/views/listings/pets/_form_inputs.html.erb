@@ -4,7 +4,15 @@
 		<div class="col-md-8 col-lg-8 col-sm-12">
 			<%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
 				<%= form.label :name, { class: 'form-label' } %>
-				<%= form.text_field :name, { class: 'form-control' } %>
+				<%= form.text_field :name, {
+                    class: 'form-control',
+                    data: {
+                        validate_target: "input",
+                        action: "change->validate#handleChange",
+                        validate_index_param: 1,
+                        constrain: pet_constrains[:name]
+                    }
+                } %>
 				<%= feedback_for? @petinfo, :name %>
 			<% end %>
 		</div>
@@ -12,10 +20,16 @@
 			<%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
 				<%= form.label :species, { class: 'form-label' } %>
 				<%= form.select :species,
-                    options_for_select(
-                        (pet_input_selector :species),
-                        selected: -> {@petinfo.species.blank? ? "" : @petinfo.species}.call ),
-                    { prompt: "Please Select" }, { class: 'form-select' }
+                    options_for_select( (pet_input_selector :species), selected: -> {@petinfo.species.blank? ? "" : @petinfo.species}.call ),
+                    { prompt: "Please Select" },  {
+                        class: 'form-select',
+                        data: {
+                            validate_target: "input",
+                            action: "change->validate#handleChange",
+                            validate_index_params: 2,
+                            constrain: pet_constrains[:species]
+                        }
+                    }
                 %>
 				<%= feedback_for? @petinfo, :species %>
 			<% end %>
@@ -32,7 +46,15 @@
 		<div class="col-md-4 col-lg-4 col-sm-12">
 			<%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
 				<%= form.label :color, { class: 'form-label' } %>
-				<%= form.text_field :color, { class: 'form-control' } %>
+				<%= form.text_field :color, {
+                    class: 'form-control',
+                    data: {
+                        validate_target: "input",
+                        action: "change->validate_handleChange",
+                        validate_index_params: 3,
+                        constrain: pet_constrains[:color]
+                    }
+                } %>
 				<%= feedback_for? @petinfo, :color %>
 			<% end %>
 		</div>
@@ -40,11 +62,16 @@
 			<%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
 				<%= form.label :gender, { class: 'form-label' } %>
 				<%= form.select :gender,
-                    options_for_select(
-                        (pet_input_selector :gender),
-                        selected: -> { @petinfo.gender.blank? ? "" : @petinfo.gender}.call ),
-                    { prompt: "Please Select" }, { class: 'form-select' }
-                %>
+                    options_for_select( (pet_input_selector :gender), selected: -> { @petinfo.gender.blank? ? "" : @petinfo.gender}.call ),
+                    { prompt: "Please Select" }, {
+                        class: 'form-select',
+                        data: {
+                            validate_target: "input",
+                            action: "change->validate#handleChange",
+                            validate_index_params: 4,
+                            constrain: pet_constrains[:gender]
+                        }
+                } %>
 				<%= feedback_for? @petinfo, :gender %>
 			<% end %>
 		</div>
@@ -68,11 +95,15 @@
 			<%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
 				<%= form.label :size, { class: 'form-label' } %>
 				<%= form.select :size,
-                    options_for_select(
-                        (pet_input_selector :size),
-                        selected: -> {@petinfo.size.blank? ? "" : @petinfo.size}.call),
-                    { prompt: "Please Select" }, { class: 'form-select' }
-                %>
+                    options_for_select( (pet_input_selector :size), selected: -> {@petinfo.size.blank? ? "" : @petinfo.size}.call),
+                    { prompt: "Please Select" }, {
+                        class: 'form-select',
+                        data: {
+                            validate_target: "input",
+                            action: "change->validate#handleChange",
+                            validate_index_params: 5,
+                            constrain: pet_constrains[:size]
+                } } %>
 				<%= feedback_for? @petinfo, :size %>
 			<% end %>
 		</div>
@@ -108,7 +139,14 @@
 		<div class="col-12">
 			<%= content_tag :div, nil, { class: 'form-group mb-2'} do %>
 				<%= form.label :description, { class: 'form-label' } %>
-				<%= form.text_area :description, { class: 'form-control', rows: 7 } %>
+				<%= form.text_area :description, {
+                    class: 'form-control', rows: 7,
+                    data: {
+                        validate_target: "input",
+                        validate_index_params: 6,
+                        constrain: pet_constrains[:description],
+                        action: "change->validate#handleChange"
+                } } %>
 				<%= feedback_for? @petinfo, :description %>
 			<% end %>
 		</div>

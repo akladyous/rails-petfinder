@@ -5,14 +5,13 @@ module Listings::PetHelper
 
   def pet_constrains
     {
-      address: { presence: { allowEmpty: false, message: "^Address can't be blank" } },
-      crossroads: { presence: { allowEmpty: false, message: "^Nearest Cross Road can't be blank" } },
-      pet_description: {
-        presence: { allowEmpty: false, message: "^Pet Description can't be blank" },
-        length: { minimum: 5, maximum: 128, message: '^Pet Description must be between 5 and 128 characters' }
-      },
-      comment: { presence: { allowEmpty: false, message: "^Comment  can't be blank" },
-                 length: { minimum: 5, maximum: 128, message: '^Comment must be between 5 and 128 characters' } }
+      name: { presence: { allowEmpty: false, message: "^Pet name can't be blank" } },
+      # species: { inclusion: { within: Pet.species.keys, message: '^Species is no not included in the list' } },
+      species: { presence: { allowEmpty: false, message: "^Species name can't be blank" } },
+      gender: { presence: { allowEmpty: false, message: "^Gender name can't be blank" } },
+      size: { presence: { allowEmpty: false, message: "^Size name can't be blank" } },
+      color: { presence: { allowEmpty: false, message: "^Color name can't be blank" } },
+      description: { presence: { allowEmpty: false, message: "^Description can't be blank" } }
     }
   end
 end
