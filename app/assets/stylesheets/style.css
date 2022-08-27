@@ -241,7 +241,7 @@
 .slider_area .dog_thumb {
     position: absolute;
     bottom: 0;
-    right: 15%;
+    right: 0%;
     bottom: -94px;
     z-index: 1;
 }
@@ -421,4 +421,19 @@
     box-shadow: none !important;
 }
 
-/* ----------------------- form-control ----------------------- */
+/* ----------------------- footer ----------------------- */
+.footer {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background: #f8f8f8;
+    position: relative;
+    z-index: 0;
+}
+.footer .footer_top {
+    padding-top: 130px;
+    padding-bottom: 110px;
+}
+
+/* ----------------------- footer ----------------------- */
