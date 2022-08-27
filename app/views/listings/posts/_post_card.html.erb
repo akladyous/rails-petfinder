@@ -1,0 +1,73 @@
+<div class="card card-area h-100">
+	<div class="" style="height: 400px;">
+		<%= image_tag  listing.pet.image, {
+                        class: "image-fluid mx-auto d-block", alt: "pet-image",
+                        data: {
+                            image_target: "output",
+                            bs_toggle: "tooltip",
+                            bs_placement: "top",
+                            bs_custom_class: "custom tooltip",
+                            bs_title: "upload your pet image" } } %>
+	</div>
+	<div class="card-body d-flex flex-column justify-content-between pb-0">
+		<div class="row mb-1">
+			<div class="col-12 px-0">
+				<h3 class="card-title text-start">
+					<%= listing.pet.name %>
+					<span class="fs-6 fw-light">
+						<%= listing.pet.gender.capitalize %>
+						<%= listing.pet.species.capitalize %>
+					</span>
+				</h3>
+			</div>
+		</div>
+		<div class="row mb-1">
+			<div class="col-12 px-0 text-start">
+				<h4 class="">
+					<%= listing.listing_type.capitalize %>
+					<span class="fs-6 fw-normal">
+						<%= listing.lost_found_date.strftime("%d %b %y") %>
+					</span>
+				</h4>
+			</div>
+		</div>
+		<div class="row mb-1">
+			<div class="col-12 px-0 text-start">
+				<h4>
+					Last seen
+					<span class="fs-6 fw-normal">
+						<%= listing.address.capitalize %>
+					</span>
+				</h4>
+			</div>
+		</div>
+		<div class="row mb-1">
+			<div class="col-12 px-0 text-start">
+				<h4>
+					Owner Description
+					<span class="fs-6 fw-normal">
+						<%= listing.pet.description.capitalize.truncate(100) %>
+					</span>
+				</h4>
+			</div>
+		</div>
+		<div class="row mb-1">
+			<div class="col-12 px-0">
+				<p class="text-start fst-italic">
+					<i class="bi bi-flag">
+						reported <%= time_ago_in_words listing.created_at  %>
+					</i>
+				</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-6 mx-auto px-0">
+				<%= link_to "View Pet", listings_pet_path(listing), {
+                                data: { turbo_frame: :_top },
+                                rel: 'next',
+                                class: "boxed-btn3 py-1"}
+                            %>
+			</div>
+		</div>
+	</div>
+</div>
