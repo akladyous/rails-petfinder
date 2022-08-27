@@ -34,26 +34,26 @@ export default class extends Controller {
         return attribute.match(/(^[^\[]+)(?=\[)|(([^\[\]]+)(?=\]))/g)
     };
     handleChange(e) {
-        // debugger
         e.preventDefault();
         const field = { [e.target.name]: e.target.value }
         const constrains = { [e.target.name]: this.constrains[e.target.name] }
-        const errors = validate(field, constrains)
+        let errors = validate(field, constrains)
         console.log('errors : ', errors)
         if (errors) {
             this.displayErrors(errors)
         } else {
-            this.removeErrors(e.target.name)
+            this.removeErrors([e.target.name])
         }
     }
     handleForm(e) {
         e.preventDefault();
-        const errors = validate(this.formTarget, this.constrains)
+        let errors = validate(this.formTarget, this.constrains)
         if (errors) {
             this.displayErrors(errors)
         } else {
-            this.removeErrors(e.target.name)
-            this.submit();
+            errors = this.inputTargets.map(input => input.name)
+            this.removeErrors(errors)
+            this.formTarget.submit();
         }
     };
     currentTarget(name) {
@@ -71,15 +71,17 @@ export default class extends Controller {
             this.addClass(target.inputFeedback, 'invalid-feedback')
         }
     };
-    removeErrors(targetName) {
-        if (targetName) {
-            const target = this.currentTarget(targetName)
+    removeErrors(errors) {
+        if (!errors) return
+        errors.forEach(inputName => {
+            const target = this.currentTarget(inputName)
             // if (!this.isEmpty(target.inputTag.value)) { }
             this.addClass(target.inputTag, 'is-valid')
             target.inputTag.classList.remove('is-invalid')
             target.inputFeedback.textContent = ""
             target.inputFeedback.setAttribute('class', "")
-        }
+
+        })
     }
 
     initalizeForm() {
@@ -102,4 +104,4 @@ export default class extends Controller {
     isEmpty(str) {
         return !str.trim().length;
     }
-}
+};
