@@ -3,16 +3,15 @@ import validate from "validate.js"
 
 export default class extends Controller {
     static targets = ["form", "input"]
-    static values = { constrains: Object, }
+    static values = { status: Boolean, }
 
     initialize() {
-        this.constrains = {};
-        this.element.removeAttribute("data-validate-constrains-value")
+        this._constrains = {}
     };
     connect() {
         for (let inputTag of this.inputTargets) {
             if (inputTag.hasAttribute('data-constrain')) {
-                this.constrains[inputTag.name] = JSON.parse(inputTag.getAttribute('data-constrain'))
+                this._constrains[inputTag.name] = JSON.parse(inputTag.getAttribute('data-constrain'))
                 inputTag.removeAttribute('data-constrain')
             }
 
@@ -22,12 +21,10 @@ export default class extends Controller {
         }
     };
     disconnect() {
-        console.log('disconnect controller')
-        debugger
         this.inputTargets
             .map(inputTag => inputTag.id.concat('-feedback'))
             .forEach(feedback => {
-                this.element.getElementById(feedback).remove();
+                document.getElementById(feedback).remove();
             })
     };
     getAttributesFor(attribute) {
@@ -36,23 +33,24 @@ export default class extends Controller {
     handleChange(e) {
         e.preventDefault();
         const field = { [e.target.name]: e.target.value }
-        const constrains = { [e.target.name]: this.constrains[e.target.name] }
+        const constrains = { [e.target.name]: this._constrains[e.target.name] }
         let errors = validate(field, constrains)
-        console.log('errors : ', errors)
         if (errors) {
             this.displayErrors(errors)
         } else {
-            this.removeErrors([e.target.name])
+            let inputTags = [e.target.name]
+            this.removeErrors(inputTags)
         }
     }
     handleForm(e) {
         e.preventDefault();
-        let errors = validate(this.formTarget, this.constrains)
+        let errors = validate(this.formTarget, this._constrains)
         if (errors) {
             this.displayErrors(errors)
         } else {
-            errors = this.inputTargets.map(input => input.name)
-            this.removeErrors(errors)
+            let inputTags = this.inputTargets.map(input => input.name)
+            this.removeErrors(inputTags)
+            this.disconnect()
             this.formTarget.submit();
         }
     };
@@ -63,6 +61,7 @@ export default class extends Controller {
         }
     };
     displayErrors(errors) {
+        if (!errors) return
         for (let inputName in errors) {
             const errorMsg = errors[inputName]
             const target = this.currentTarget(inputName)
@@ -70,10 +69,11 @@ export default class extends Controller {
             target.inputFeedback.textContent = errorMsg.at(0)
             this.addClass(target.inputFeedback, 'invalid-feedback')
         }
+        this._errors = {}
     };
-    removeErrors(errors) {
-        if (!errors) return
-        errors.forEach(inputName => {
+    removeErrors(inputTags) {
+        if (!inputTags) return
+        inputTags.forEach(inputName => {
             const target = this.currentTarget(inputName)
             // if (!this.isEmpty(target.inputTag.value)) { }
             this.addClass(target.inputTag, 'is-valid')
@@ -88,7 +88,7 @@ export default class extends Controller {
         for (let inputTag of this.element) {
             if (inputTag.type !== 'hidden' || inputTag.type === 'submit') {
                 if (inputTag.hasAttribute('data-constrain')) {
-                    this.constrains[inputTag.name] = JSON.parse(inputTag.getAttribute('data-constrain'))
+                    this._constrains[inputTag.name] = JSON.parse(inputTag.getAttribute('data-constrain'))
                     inputTag.removeAttribute('data-constrain')
                     inputTag.addEventListener('change', this.handleChange)
                 }

@@ -2,12 +2,11 @@
 	<%=
         form_with model: @listing_report,
         url: listings_reports_path,
-        class: 'needs-validation',
+        class: 'listing-report needs-validation',
         data: {
-
             controller: "validate",
             validate_target: "form",
-            validate_constrains_value: report_constrains.to_json
+            validate_status_value: true
             } do |form|
     %>
 	<div class="row text-start">
