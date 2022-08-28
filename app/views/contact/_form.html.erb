@@ -1,1 +1,47 @@
-
+<%= form_tag nil, data: { controller: 'validate', validate_target: 'form' } do %>
+	<div class="row mb-2">
+		<div class="col-sm-12 col-md-6 col-lg-6">
+			<div class="form-group mb-2">
+				<%= label_tag :name, nil, { class: 'form-label' } %>
+				<%= text_field_tag :name, nil, { class: 'form-control',
+                    data: { validate_target: :input, action: "change->validate#handleChange", constrain: @constrains[:name] }
+                } %>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-6 col-lg-6">
+			<div class="form-group mb-2">
+				<%= label_tag :email, nil, { class: 'form-label' } %>
+				<%= text_field_tag :email, nil, { class: 'form-control',
+                    data: { validate_target: :input, action: "change->validate#handleChange", constrain: @constrains[:email] }
+                } %>
+			</div>
+		</div>
+	</div>
+	<div class="row mb-2">
+		<div class="col-12">
+			<div class="form-group mb-2">
+				<% label_tag :subject, nil, { class: 'form-label' } %>
+				<%= text_field_tag :subject, nil, { class: 'form-control',
+                    data: { validate_target: :input, action: "change->validate#handleChange", constrain: @constrains[:subject] }
+                } %>
+			</div>
+		</div>
+	</div>
+	<div class="row mb-2">
+		<div class="col-12">
+			<div class="form-group mb-2">
+				<%= label_tag :message, nil, { class: 'form-label' } %>
+				<%= text_area_tag :message, nil, { class: 'form-control', rows: 7,
+                    data: { validate_target: :input, action: "change->validate#handleChange", constrain: @constrains[:message] }
+                } %>
+			</div>
+		</div>
+	</div>
+	<div class="row mb-2">
+		<div class="col-12">
+			<div class="form-group">
+				<%= submit_tag :search, class: 'boxed-btn3 py-0 border-0', data: { action: "validate#handleForm" } %>
+			</div>
+		</div>
+	</div>
+<% end %>

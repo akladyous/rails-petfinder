@@ -7,9 +7,8 @@ Rails.application.routes.draw do
   end
 
   devise_for :users
-  get 'about', to: 'about#index'
-  # get 'contact', to: 'contact#index'
-  resources :contact, only: :index
+  resources :about, only: :index
+  resources :contact, only: %i[index create]
 
   root 'home#index'
 end

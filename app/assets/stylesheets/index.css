@@ -219,4 +219,12 @@ th {
 .custom-file-input:active::before {
     background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
 }
-/* -------------------- custom input-select -------------------- */
+/* -------------------- contact page -------------------- */
+.pet-bg {
+    background-image: url("banner/about-1.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: fill;
+    width: 100%;
+}
