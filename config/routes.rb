@@ -7,5 +7,8 @@ Rails.application.routes.draw do
   end
 
   devise_for :users
+  get 'about', to: 'about#index'
+  get 'contact', to: 'contact#index'
+
   root 'home#index'
 end
