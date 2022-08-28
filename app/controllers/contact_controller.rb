@@ -10,6 +10,12 @@ class ContactController < ApplicationController
   end
 
   def create
-    debugger
+    @contact = contact_params.to_h
+    FeedbackMailer.send_feedback(@contact).deliver_now
+    redirect_to root_path
+  end
+
+  def contact_params
+    params.permit(:name, :email, :subject, :message)
   end
 end
