@@ -1,47 +1,65 @@
-	
-<div class="testmonial_area">
-	<div class="container">
-		<div class="row justify-content-center">
-			<div class="col-lg-10">
-				<div class="textmonial_active owl-carousel">
-					<div class="testmonial_wrap">
-						<div class="single_testmonial d-flex align-items-center">
-							<div class="test_thumb">
-								<%= image_tag "testimonial/1.png", { alt: 'testimonial '} %>
+<div class="container mb-5">
+	<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+		<div class="carousel-inner">
+			<% Listing.random_sample.each_with_index do | listing, index | %>
+				<div class="carousel-item <%= index == 0 ? ' active' : '' %>">
+					<div class="card mb-3 card-area w-100">
+						<div class="row g-1">
+							<div class="col-md-4">
+								<%= image_tag  listing.pet.image.representation(resize_to_fill: [350, 350, gravity: 'north']) , { class: "img-fluid rounded-start rounded-3", alt: "pet-image", } %>
 							</div>
-							<div class="test_content">
-								<h4>Jhon Walker</h4>
-								<span>Head of web design</span>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerci.</p>
-							</div>
-						</div>
-					</div>
-					<div class="testmonial_wrap">
-						<div class="single_testmonial d-flex align-items-center">
-							<div class="test_thumb">
-								<%= image_tag "testimonial/1.png", { alt: 'testimonial '} %>
-							</div>
-							<div class="test_content">
-								<h4>Jhon Walker</h4>
-								<span>Head of web design</span>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerci.</p>
-							</div>
-						</div>
-					</div>
-					<div class="testmonial_wrap">
-						<div class="single_testmonial d-flex align-items-center">
-							<div class="test_thumb">
-								<%= image_tag "testimonial/1.png", { alt: 'testimonial '} %>
-							</div>
-							<div class="test_content">
-								<h4>Jhon Walker</h4>
-								<span>Head of web design</span>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerci.</p>
+							<div class="col-md-8">
+								<div class="card-body">
+									<div class="row">
+										<div class="col-auto text-start">
+											<h4 class="card-title"><%= listing.pet.name.capitalize %></h4>
+										</div>
+										<div class="col-auto px-1 my-auto text-start">
+											<h5 class="m-0"><%= listing.pet.gender == "unknown" ? "" : listing.pet.gender.capitalize %></h5>
+										</div>
+										<div class="col-auto px-0 my-auto text-start">
+											<h5 class="mb-0 fst-italic"><%= listing.pet.species.capitalize %></h5>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-auto text-start">
+											<h4 class="card-title"><%= listing.listing_type.capitalize %> </h4>
+										</div>
+										<div class="col-auto px-1 my-auto text-start">
+											<h4 class=""><%= listing.lost_found_date.strftime("%d %b %y")  %></h4>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-auto text-start">
+											<h4 class="card-title">Pet Description</h4>
+										</div>
+										<div class="col-auto my-auto text-start">
+											<p class=""><%= listing.pet.description  %></p>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-auto text-start">
+											<h4 class="card-title">Owner Message</h4>
+										</div>
+										<div class="col-auto my-auto text-start">
+											<p class=""><%= listing.comment  %></p>
+										</div>
+									</div>
+									<p class="card-text"><small class="text-muted">created at&nbsp;<%= time_ago_in_words(listing.lost_found_date) %> &nbsp;ago</small></p>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
+			<% end %>
 		</div>
+		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Next</span>
+		</button>
 	</div>
 </div>

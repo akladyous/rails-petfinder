@@ -18,4 +18,6 @@ class Listing < ApplicationRecord
     end
     query
   end
+
+  scope :random_sample, -> (num = nil) { order('RANDOM()').take(num || 10) }
 end
