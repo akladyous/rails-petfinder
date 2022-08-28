@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <%= render 'head' %>
-  </head>
-  <body class="<%= controller_name %> <%= action_name %>">
-    <header>
-      <%= render 'header' %>
-    </header>
-    <%# content_for :content or yield %>
-    <%= content_for?(:content) ? yield(:content) : yield %>
-    <footer>
-      <%= render 'footer' %>
-    </footer>
-  </body>
+	<head>
+		<%= render 'head' %>
+	</head>
+	<body class="<%= controller_name %> <%= action_name %>">
+		<header>
+			<%= render 'header' %>
+		</header>
+		<%# content_for :content or yield %>
+		<%= content_for?(:content) ? yield(:content) : yield %>
+		<footer>
+			<%= render 'footer' %>
+		</footer>
+	</body>
 </html>
