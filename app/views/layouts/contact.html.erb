@@ -2,10 +2,8 @@
 	<%= turbo_frame_tag "posts_main" do %>
 		<%= render 'title' %>
 		<div class="container mt-5">
-			<div class="text-center">
-				<%= render 'flash' %>
-				<%= yield %>
-			</div>
+			<%= render 'flash' %>
+			<%= yield %>
 		</div>
 	<% end %>
 <% end %>

@@ -1,10 +1,10 @@
 <%= turbo_frame_tag "listing" do %>
-    <div class="container mt-4">
-        <div class="row justify-content-md-center">
-            <div class="col col-lg-6 col-md-6 col-sm-6">
-                <div class="card">
-                    <div class="pet-image">
-                        <%= image_tag  @listing.pet.image, {
+	<div class="container mt-4">
+		<div class="row justify-content-md-center">
+			<div class="col col-lg-6 col-md-6 col-sm-6">
+				<div class="card">
+					<div class="pet-image">
+						<%= image_tag  @listing.pet.image, {
                                     class: "image-fluid w-100 p-3 rounded-3",
                                     alt: "pet-image",
                                     data: {
@@ -16,71 +16,70 @@
                                     }
                                 }
                         %>
-                    </div>
-                    <div class="card-body">
-                        <div class="card-title text-center fs-3">
-                            <%= @listing.pet.name %>
-                        </div>
-                        <div class="row align-items-start">
-                            <div class="col">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item px-0 fs-5">
-                                        Listing Type
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item px-0 fs-5">
-                                        <%= @listing.listing_type %>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="row align-items-start">
-                            <div class="col">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item px-0 fs-5">
-                                        Pet Species
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item px-0 fs-5">
-                                        <%= @listing.pet.species %>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="row align-items-start">
-                            <div class="col">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item px-0 fs-5">
-                                        Pet Size
-                                     </li>
-                                </ul>
-                            </div>
-                            <div class="col">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item px-0 fs-5">
-                                        <%= @listing.pet.size %>
-                                    </li>
-                                </ul>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <%= link_to "back", :back, {
+					</div>
+					<div class="card-body">
+						<div class="card-title text-center fs-3">
+							<%= @listing.pet.name %>
+						</div>
+						<div class="row align-items-start">
+							<div class="col">
+								<ul class="list-group list-group-flush">
+									<li class="list-group-item px-0 fs-5">
+										Listing Type
+									</li>
+								</ul>
+							</div>
+							<div class="col">
+								<ul class="list-group list-group-flush">
+									<li class="list-group-item px-0 fs-5">
+										<%= @listing.listing_type %>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="row align-items-start">
+							<div class="col">
+								<ul class="list-group list-group-flush">
+									<li class="list-group-item px-0 fs-5">
+										Pet Species
+									</li>
+								</ul>
+							</div>
+							<div class="col">
+								<ul class="list-group list-group-flush">
+									<li class="list-group-item px-0 fs-5">
+										<%= @listing.pet.species %>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="row align-items-start">
+							<div class="col">
+								<ul class="list-group list-group-flush">
+									<li class="list-group-item px-0 fs-5">
+										Pet Size
+									</li>
+								</ul>
+							</div>
+							<div class="col">
+								<ul class="list-group list-group-flush">
+									<li class="list-group-item px-0 fs-5">
+										<%= @listing.pet.size %>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<br>
+				<%= link_to "back", :back, {
                         data:
                             { turbo_frame: :_top },
                             rel: 'prev',
                             class: 'btn btn-light rounded-pill py-2 px-4 text-warning'
                     } %>
-                </div>
-            </div>
-        </div>
-    </div>
+			</div>
+		</div>
+	</div>
+</div>
 <% end %>
-
