@@ -5,8 +5,8 @@
 				<div class="carousel-item <%= index == 0 ? ' active' : '' %>">
 					<div class="card mb-3 card-area w-100">
 						<div class="row g-1">
-							<div class="col-md-4">
-								<%= image_tag  listing.pet.image.representation(resize_to_fill: [350, 350, gravity: 'north']) , { class: "img-fluid rounded-start rounded-3", alt: "pet-image", } %>
+							<div class="col-md-4" style="height: 22rem;">
+								<%= image_tag  listing.pet.image.representation(resize_to_fill: [350, 350, gravity: 'Center']) , { class: "img-fluid rounded-start rounded-3", alt: "pet-image", } %>
 							</div>
 							<div class="col-md-8">
 								<div class="card-body">
