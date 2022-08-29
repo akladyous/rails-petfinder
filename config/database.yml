@@ -2,16 +2,16 @@ default: &default
     adapter: postgresql
     encoding: unicode
     pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-    database: lostpet101
-    username: lostpet101
-    password: <%= ENV["LOSTPET101_DATABASE_PASSWORD"] %>
-    host: localhost
 
 development:
     <<: *default
+    database: Lostpet101_development
 
 test:
     <<: *default
+    database: Lostpet101_test
 
 production:
     <<: *default
+    database: Lostpet101_production
+    password: <%= ENV["LOSTPET101_DATABASE_PASSWORD"] %>
