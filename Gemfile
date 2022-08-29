@@ -52,7 +52,7 @@ gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master', r
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 gem 'devise', '~> 4.8', '>= 4.8.1'
-gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.2', require: false
 gem 'pagy', '~> 5.10', '>= 5.10.1'
 
 group :development, :test do
