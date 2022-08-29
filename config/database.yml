@@ -1,17 +1,17 @@
 default: &default
-  adapter: postgresql
-  encoding: unicode
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  database: petfinder
-  username: postgres
-  password: <%= ENV["LOSTPET101_DATABASE_PASSWORD"] %>
-  host: localhost
+    adapter: postgresql
+    encoding: unicode
+    pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+    database: petfinder
+    username: Rails.application.credentials.dig(:database, :username)
+    password: Rails.application.credentials.dig(:database, :password)
+    host: localhost
 
 development:
-  <<: *default
+    <<: *default
 
 test:
-  <<: *default
+    <<: *default
 
 production:
-  <<: *default
+    <<: *default
