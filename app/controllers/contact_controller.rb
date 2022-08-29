@@ -1,4 +1,6 @@
 class ContactController < ApplicationController
+  skip_before_action :authenticate_user!
+
   def index
     @constrains = {
       name: { presence: { allowEmpty: false, message: "^Name name can't be blank" } },
