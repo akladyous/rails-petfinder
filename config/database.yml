@@ -13,5 +13,5 @@ test:
 
 production:
     <<: *default
-    database: Lostpet101_production
+    database: <%= ENV["LOSTPET101_DATABASE_USERNAME"] %>
     password: <%= ENV["LOSTPET101_DATABASE_PASSWORD"] %>
