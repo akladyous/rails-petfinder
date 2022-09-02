@@ -17,48 +17,22 @@ end
 
 def generate_pet
   species = -> { %w[dog cat].sample }.call
+  coat_list = lambda {
+    ['Hairless', 'Curly-Coated', 'Wire-Coated', 'Long-Coated', 'Short-Coated', 'Medium-Coated', 'Smooth',
+     'Double and Single Coated', 'Silky Coated', 'Rough Coated', 'Wire', 'Coated', 'Hairless', 'Drying a silky coated', 'Washing a silky coated', 'Drying a double coated']
+  }
+  color_list = lambda {
+    ['Black and tan', 'brown and tan', 'Bicolor', 'Irish spotted', 'Flashy', 'Patched', 'Tuxedo', 'Tricolor', 'Spotted',
+     'Flecked', 'ticked', 'speckled', 'Brindle', 'Sable']
+  }
   {
     name: Faker::Creature::Animal.name,
-    species:,
+    species: species,
     gender: %w[male female unknown].sample,
     size: %w[small medium large].sample,
     breed: -> { species == 'dog' ? Faker::Creature::Dog.breed : Faker::Creature::Cat.breed }.call,
-    color: lambda {
-             ['Black and tan',
-              'brown and tan',
-              'Bicolor',
-              'Irish spotted',
-              'Flashy',
-              'Patched',
-              'Tuxedo',
-              'Tricolor',
-              'Spotted',
-              'Flecked',
-              'ticked',
-              'speckled',
-              'Brindle',
-              'Sable'].sample
-           }.call,
-    coat: lambda {
-            [
-              'Hairless',
-              'Curly-Coated',
-              'Wire-Coated',
-              'Long-Coated',
-              'Short-Coated',
-              'Medium-Coated',
-              'Smooth',
-              'Double and Single Coated',
-              'Silky Coated',
-              'Rough Coated',
-              "Wire ,
-        Coated",
-              'Hairless',
-              'Drying a silky coated',
-              'Washing a silky coated',
-              'Drying a double coated'
-            ].sample
-          }.call,
+    color: color_list.call,
+    coat: coat_list.call,
     age: rand(1..15),
     height: rand(0.65..3.28).round(2),
     weight: rand(15..145),
@@ -73,7 +47,7 @@ def generate_listing
   {
     listing_type: -> { %w[lost found].sample }.call,
     lost_found_date: -> { rand(1.year.ago..2.month.ago) }.call,
-    address:,
+    address: address,
     crossroads: address.split(',').first,
     pet_description: Faker::Lorem.paragraph(sentence_count: 6, supplemental: false, random_sentences_to_add: 4),
     comment: Faker::Lorem.paragraph(sentence_count: 10, supplemental: false, random_sentences_to_add: 4)
