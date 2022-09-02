@@ -53,6 +53,8 @@ gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'image_processing', '~> 1.2'
 gem 'pagy', '~> 5.10', '>= 5.10.1'
 
+gem 'debug', platforms: %i[mri mingw x64_mingw]
+
 group :development, :test do
 end
 
@@ -61,7 +63,7 @@ group :development do
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
 
   # gem 'coderay', '~> 1.1', '>= 1.1.3'
-  gem 'debug', platforms: %i[mri mingw x64_mingw]
+
   gem 'erb_lint', require: false
   gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master', require: false
   gem 'htmlbeautifier', '~> 1.3', '>= 1.3.1'
