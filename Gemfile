@@ -2,33 +2,15 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.0'
-
-# Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem 'rails', '~> 7.0.3', '>= 7.0.3.1'
-
-# The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
-gem 'sprockets-rails'
-
-# Use postgresql as the database for Active Record
-gem 'pg', '~> 1.1'
-
-# Use the Puma web server [https://github.com/puma/puma]
-gem 'puma', '~> 5.0'
-
-# Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
-gem 'jsbundling-rails'
-
-# Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
-gem 'turbo-rails'
-
-# Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
-gem 'stimulus-rails'
-
-# Bundle and process CSS [https://github.com/rails/cssbundling-rails]
 gem 'cssbundling-rails'
-
-# Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem 'jbuilder'
+gem 'jsbundling-rails'
+gem 'pg', '~> 1.4', '>= 1.4.3'
+gem 'puma', '~> 5.0'
+gem 'rails', '~> 7.0.3', '>= 7.0.3.1'
+gem 'sprockets-rails'
+gem 'stimulus-rails'
+gem 'turbo-rails'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
@@ -53,17 +35,12 @@ gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'image_processing', '~> 1.2'
 gem 'pagy', '~> 5.10', '>= 5.10.1'
 
-gem 'debug', platforms: %i[mri mingw x64_mingw]
-
 group :development, :test do
 end
 
 group :development do
-  # Use console on exceptions pages [https://github.com/rails/web-console]
-  # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
-
   # gem 'coderay', '~> 1.1', '>= 1.1.3'
-
+  gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'erb_lint', require: false
   gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master', require: false
   gem 'htmlbeautifier', '~> 1.3', '>= 1.3.1'
@@ -72,13 +49,10 @@ group :development do
   gem 'solargraph-rails', '~> 0.3.1'
   gem 'web-console'
   # gem "rack-mini-profiler"
-
-  # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
 
 group :test do
-  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'webdrivers'
