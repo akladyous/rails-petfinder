@@ -29,6 +29,7 @@ module ApplicationHelper
     html.join_html_safe
   end
 
+
   def input_selector(model, attribute)
     attribute = attribute.is_a?(String) ? attribute.to_sym : attribute
     model.public_send(attribute).map { |k, _| [k.capitalize, k] }
