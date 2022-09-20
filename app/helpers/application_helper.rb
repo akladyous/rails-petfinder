@@ -39,4 +39,7 @@ module ApplicationHelper
   def current_model(object)
     object.class.name.gsub('::', '').underscore
   end
+  def model_name
+    controller_path.classify
+  end
 end
