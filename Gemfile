@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.0'
+ruby '3.1.2'
 gem 'cssbundling-rails'
 gem 'jbuilder'
 gem 'jsbundling-rails'
@@ -42,10 +42,10 @@ group :development do
   # gem 'coderay', '~> 1.1', '>= 1.1.3'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'erb_lint', require: false
-  gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master', require: false
+  gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'main', require: false
   gem 'htmlbeautifier', '~> 1.3', '>= 1.3.1'
   gem 'ruby-prof', '~> 0.16.2'
-  gem 'solargraph', '~> 0.45.0'
+  gem 'solargraph', '~> 0.47.0'
   gem 'solargraph-rails', '~> 0.3.1'
   gem 'web-console'
   # gem "rack-mini-profiler"
