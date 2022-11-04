@@ -14,15 +14,16 @@
 						<div class="form-group mb-2">
 							<%= f.label :email, { class: 'form-label' } %>
 							<%= f.email_field :email, {class: 'form-control', autofocus: true, autocomplete: "off"} %>
+							<%# feedback_for?(resource, :email) unless resource.errors.empty? %>
 						</div>
 						<div class="form-group mb-2">
 							<%= f.label :password, { class: 'form-label'} %>
 							<%= f.password_field :password, { class: 'form-control', autocomplete: "off"} %>
 						</div>
 						<div class="form-group mb-2">
-							<% if !flash.empty? %>
-								<%= content_tag :div, 'Invalid email or password', {class: ['d-block', 'invalid-feedback']} %>
-							<% end %>
+							<%# if !flash.empty? %>
+							<%# content_tag :div, 'Invalid email or password', {class: ['d-block', 'invalid-feedback']} %>
+							<%# end %>
 						</div>
 						<% if devise_mapping.rememberable? %>
 							<div class="input-group my-3">
