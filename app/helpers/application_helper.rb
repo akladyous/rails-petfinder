@@ -23,7 +23,7 @@ module ApplicationHelper
     html = []
     if object.errors[attribute].any?
       html << object.errors[attribute].each do |msg|
-        tag.div(msg, class: 'come class')
+        tag.div(msg, class: 'some class')
       end
     end
     html.join_html_safe
