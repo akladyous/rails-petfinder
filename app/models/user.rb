@@ -5,6 +5,6 @@ class User < ApplicationRecord
           :recoverable, :rememberable, :validatable
 
   has_one :avatar
-  has_many :pets
+  has_many :pets, through: :listings
   has_many :listings
 end
